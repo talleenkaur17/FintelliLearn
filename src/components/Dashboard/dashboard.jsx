@@ -1,25 +1,30 @@
 // Dashboard.jsx
 import React from 'react';
 import { Link } from 'react-router-dom';
-
+import '@fortawesome/fontawesome-svg-core/styles.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHome ,faNewspaper,faUsers,faSignOutAlt} from '@fortawesome/free-solid-svg-icons';
 function Dashboard() {
   return (
     <div className="flex h-screen">
       <div className="w-1/4 bg-blue-900 text-white">
         <div className="p-4">
-          <h2 className="text-2xl font-bold mb-4">Dashboard</h2>
+          <h2 className="text-2xl font-bold mb-4">FintelliLearn</h2>
           <ul className="space-y-4">
             <li>
-              <Link to="/profile" className="block py-2 px-4 rounded hover:bg-gray-700">Profile</Link>
+              <Link to="/dashboard" className="block py-2 px-4 rounded hover:bg-gray-700"><FontAwesomeIcon icon={faHome} style={{ color: 'white',marginRight: '0.5rem' }} />Home</Link>
             </li>
             <li>
-              <Link to="/discuss" className="block py-2 px-4 rounded hover:bg-gray-700">Discuss</Link>
+            <Link to="/discuss" className="block py-2 px-4 rounded hover:bg-gray-700">
+      <FontAwesomeIcon icon={faUsers} style={{ marginRight: '0.5rem',color:'white' }} /> {/* Icon */}
+      Community Forum
+    </Link>
             </li>
             <li>
-              <Link to="/news" className="block py-2 px-4 rounded hover:bg-gray-700">News</Link>
+              <Link to="/news" className="block py-2 px-4 rounded hover:bg-gray-700" ><FontAwesomeIcon icon={faNewspaper} style={{ color: 'white',marginRight: '0.5rem' }}/>News</Link>
             </li>
             <li>
-              <Link to="/" className="block py-2 px-4 rounded hover:bg-gray-700">Logout</Link>
+              <Link to="/" className="block py-2 px-4 rounded hover:bg-gray-700" ><FontAwesomeIcon icon={faSignOutAlt} style={{ color: 'white',marginRight: '0.5rem' }}/>Logout</Link>
             </li>
           </ul>
         </div>
