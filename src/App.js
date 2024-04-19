@@ -4,6 +4,10 @@ import './App.css';
 import Welcome from './components/Welcome';
 import Login from './components/Login/Login';
 import Register from './components/Sign/signup';
+import Dashboard from "./components/Dashboard/dashboard";
+import Profile from "./components/Profile/profile"
+import Juniors from "./components/Juniors/juniors";
+import News from "./components/News/news";
 
 function App() {
   return (
@@ -13,6 +17,15 @@ function App() {
         <Route path="/" element={<Welcome/>} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Register />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/profile" element={<Profile/>} />
+        <Route path="/juniors" element={<Juniors/>} />
+        <Route path="/juniors" element={<Juniors/>} />
+        <Route path="/news" element={<News/>} />
+        
+     
+        
+
         
       </Routes>
     </Router>
