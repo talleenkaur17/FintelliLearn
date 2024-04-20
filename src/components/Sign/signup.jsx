@@ -37,7 +37,7 @@ function Register() {
     <div className="column">
       <div className="stack">
         <div className="stack1">
-          <img id="img-logo" src={logo} alt="img" />
+          <img id="img-logos" src={logo} alt="img" />
         </div>
         <div className="column1">
           <div className="top-box">
