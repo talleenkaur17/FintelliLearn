@@ -9,6 +9,7 @@ import Profile from "./components/Profile/profile"
 import Juniors from "./components/Juniors/juniors";
 import News from "./components/News/news";
 
+
 function App() {
   return (
     <div className="App">
@@ -22,6 +23,7 @@ function App() {
         <Route path="/juniors" element={<Juniors/>} />
         <Route path="/juniors" element={<Juniors/>} />
         <Route path="/news" element={<News/>} />
+        
         
      
         
