@@ -9,9 +9,8 @@ import Juniors from "./components/Juniors/juniors";
 import News from "./components/News/news";
 import Budget from "./components/Budgets/budgeting";
 import Quiz from "./components/Quiz/quiz";
-import CaseStudy from "./components/CaseStudy/CaseStudy";
 
-import Quiz from "./components/Quiz/quiz";
+
 import CaseStudy from "./components/CaseStudy/CaseStudy";
 
 function App() {

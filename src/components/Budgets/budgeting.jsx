@@ -30,7 +30,7 @@ function budget(){
     <tr>
       <td class="font-bold font-mono px-4 py-2 border border-gray-200">Government Budgets</td>
       <td class="px-4 py-2 border border-gray-200">
-      <a href="https://www.britannica.com/money/government-budget" class="text-blue-500 right-4"><FontAwesomeIcon icon={faNewspaper} />Article-A</a>
+      <a href="https://www.britannica.com/money/government-budget" target="_blank" class="text-blue-500 right-4"><FontAwesomeIcon icon={faNewspaper} />Article-A</a>
       </td>
       <td class="px-4 py-2 border border-gray-200">
         <a href="https://www.youtube.com/results?search_query=government+budget+" class="text-red-500">
@@ -38,7 +38,7 @@ function budget(){
  <FontAwesomeIcon icon={faYoutube} /></a>
       </td>
       <td class="px-4 py-2 border border-gray-200">
-        <a href="link2.html" class="text-blue-500">Link 2</a>
+        <a href="link2.html"target="_blank" class="text-blue-500">Link 2</a>
       </td>
     </tr>
     <tr>
