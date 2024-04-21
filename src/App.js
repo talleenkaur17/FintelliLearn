@@ -9,15 +9,12 @@ import Dashboard from "./components/Dashboard/dashboard";
 import Profile from "./components/Profile/profile"
 import Juniors from "./components/Juniors/juniors";
 import News from "./components/News/news";
-<<<<<<< HEAD
 import Budget from "./components/Budgets/budgeting";
-=======
 import Quiz from "./components/Quiz/quiz";
 import CaseStudy from "./components/CaseStudy/CaseStudy";
 
 
 
->>>>>>> 029fc3ad8daf9471df95da314ec740a9620a2abb
 
 
 function App() {
@@ -34,22 +31,12 @@ function App() {
         <Route path="/juniors" element={<Juniors/>} />
         <Route path="/juniors" element={<Juniors/>} />
         <Route path="/news" element={<News/>} />
-<<<<<<< HEAD
         <Route path="/budgeting" element={<Budget/>} />
-=======
 
         <Route path="/quiz" element={<Quiz/>} />
         <Route path="/quiz/saving" element={<CaseStudy/>} />
         <Route path="/quiz/retirement" element={<CaseStudy/>} />
 
-
->>>>>>> 029fc3ad8daf9471df95da314ec740a9620a2abb
-        
-        
-     
-        
-
-        
       </Routes>
     </Router>
    
