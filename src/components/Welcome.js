@@ -1,4 +1,4 @@
-
+import react from "react";
 import mainimg from "../images/video.webp";
 import "./Welcome.css";
 import { Link } from "react-router-dom";
