@@ -13,10 +13,6 @@ import Budget from "./components/Budgets/budgeting";
 import Quiz from "./components/Quiz/quiz";
 import CaseStudy from "./components/CaseStudy/CaseStudy";
 
-
-
-
-
 function App() {
   
   return (
