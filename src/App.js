@@ -11,6 +11,7 @@ import Juniors from "./components/Juniors/juniors";
 import News from "./components/News/news";
 import Quiz from "./components/Quiz/quiz";
 import CaseStudy from "./components/CaseStudy/CaseStudy";
+import budget from "./components/Budgets/budgeting";
 
 
 
@@ -34,6 +35,7 @@ function App() {
         <Route path="/quiz" element={<Quiz/>} />
         <Route path="/quiz/saving" element={<CaseStudy/>} />
         <Route path="/quiz/retirement" element={<CaseStudy/>} />
+        <Route path="/budgeting" element={<budget/>} />
 
 
         
