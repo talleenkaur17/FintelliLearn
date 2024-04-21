@@ -47,16 +47,16 @@ export const quizData = {
         explanation: "Spending more than one earns leads to debt and financial instability, making it counterproductive to the goal of saving money."
       },
       {
-        question: "What role does budgeting play in saving money?",
+        question: "What does budgeting do to save money?",
         choices: [
-          "a) Budgeting helps individuals track expenses and identify areas for saving",
-          "b) Budgeting restricts spending and prevents individuals from enjoying life",
-          "c) Budgeting is unnecessary for those with high incomes",
-          "d) Budgeting encourages overspending on unnecessary items"
+        "a) Track expenses",
+        "b) Limit spending",
+        "c) Unnecessary for high incomes",
+        "d) Encourage overspending"
         ],
-        correctAnswer: "a) Budgeting helps individuals track expenses and identify areas for saving",
-        explanation: "Budgeting allows individuals to prioritize spending, track expenses, and allocate funds towards savings goals, helping them achieve financial stability."
-      }
+        correctAnswer: "a) Track expenses",
+        "explanation": "Budgeting allows individuals to prioritize spending, track expenses, and allocate funds towards savings goals, helping them achieve financial stability."
+        }
     ]
   };
   
