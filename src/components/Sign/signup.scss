@@ -2,7 +2,12 @@
 * {
   font-family: "Cabin", sans-serif;
 }
-
+#img-logos{
+  width: 65%;
+  height: 80%;
+  margin-left: 100px;
+  margin-top: 50px;
+}
 .column {
   display: flex;
   align-items: center;
@@ -27,7 +32,10 @@
       flex-direction: column;
       margin-bottom: 20px;
       width: 547px;
-      height: max-content;
+      height:auto;
+      margin-bottom: 50px;
+      
+      // height: max-content;
       border-radius: 32.68px;
       background: rgba(198, 218, 239, 1);
       .top-box {

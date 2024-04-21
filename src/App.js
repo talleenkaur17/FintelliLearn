@@ -15,6 +15,7 @@ import CaseStudy from "./components/CaseStudy/CaseStudy";
 
 
 
+
 function App() {
   
   return (
@@ -35,6 +36,7 @@ function App() {
         <Route path="/quiz/retirement" element={<CaseStudy/>} />
 
 
+        
         
      
         
