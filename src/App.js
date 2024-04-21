@@ -1,7 +1,5 @@
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 import react from 'react';
-
-
 import Welcome from './components/Welcome';
 import Login from './components/Login/Login';
 import Register from './components/Sign/signup';
@@ -10,6 +8,9 @@ import Profile from "./components/Profile/profile"
 import Juniors from "./components/Juniors/juniors";
 import News from "./components/News/news";
 import Budget from "./components/Budgets/budgeting";
+import Quiz from "./components/Quiz/quiz";
+import CaseStudy from "./components/CaseStudy/CaseStudy";
+
 import Quiz from "./components/Quiz/quiz";
 import CaseStudy from "./components/CaseStudy/CaseStudy";
 
@@ -32,16 +33,9 @@ function App() {
         <Route path="/quiz" element={<Quiz/>} />
         <Route path="/quiz/saving" element={<CaseStudy/>} />
         <Route path="/quiz/retirement" element={<CaseStudy/>} />
-
       </Routes>
     </Router>
-   
-    </div>
-  
-    
-    
-    
-    
+    </div>  
   );
 }
 
