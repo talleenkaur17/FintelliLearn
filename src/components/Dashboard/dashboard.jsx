@@ -24,7 +24,7 @@ function Dashboard() {
               <Link to="/news" className="block py-2 px-4 rounded hover:bg-gray-700" ><FontAwesomeIcon icon={faNewspaper} style={{ color: 'white', marginRight: '0.5rem' }} />News</Link>
             </li>
             <li>
-              <Link to="/tracker" className="block py-2 px-4 rounded hover:bg-gray-700" ><FontAwesomeIcon icon={faNewspaper} style={{ color: 'white',marginRight: '0.5rem' }}/>News</Link>
+              <Link to="/tracker" className="block py-2 px-4 rounded hover:bg-gray-700" ><FontAwesomeIcon icon={faNewspaper} style={{ color: 'white',marginRight: '0.5rem' }}/>Budget Tracker</Link>
             </li>
             <li>
               <Link to="/" className="block py-2 px-4 rounded hover:bg-gray-700" ><FontAwesomeIcon icon={faSignOutAlt} style={{ color: 'white',marginRight: '0.5rem' }}/>Logout</Link>

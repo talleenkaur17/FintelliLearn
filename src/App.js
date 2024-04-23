@@ -15,6 +15,7 @@ import CaseStudy from "./components/CaseStudy/CaseStudy";
 import FinanceCalculator from "./components/FinanceCalculator/FinanceCalculator";
 import Compound from "./components/CompoundInterest/Compound";
 import CompoundReview from "./components/CompoundReview/CompoundReview";
+import Tracker from "./components/tracker/tracker";
 
 
 
@@ -42,6 +43,7 @@ function App() {
         <Route path="/calculate" element={<FinanceCalculator/>} />
         <Route  path="/compound-interest" element={<Compound />}/>
         <Route  path="/review" element={<CompoundReview />}/>
+        <Route  path="/tracker" element={<Tracker />}/>
 
       
 
