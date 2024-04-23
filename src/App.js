@@ -12,6 +12,9 @@ import Quiz from "./components/Quiz/quiz";
 
 
 import CaseStudy from "./components/CaseStudy/CaseStudy";
+import FinanceCalculator from "./components/FinanceCalculator/FinanceCalculator";
+import Compound from "./components/CompoundInterest/Compound";
+import CompoundReview from "./components/CompoundReview/CompoundReview";
 
 
 
@@ -36,6 +39,10 @@ function App() {
         <Route path="/quiz" element={<Quiz/>} />
         <Route path="/quiz/saving" element={<CaseStudy/>} />
         <Route path="/quiz/retirement" element={<CaseStudy/>} />
+        <Route path="/calculate" element={<FinanceCalculator/>} />
+        <Route  path="/compound-interest" element={<Compound />}/>
+        <Route  path="/review" element={<CompoundReview />}/>
+
 
 
         
