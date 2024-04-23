@@ -43,7 +43,7 @@ function App() {
         <Route  path="/compound-interest" element={<Compound />}/>
         <Route  path="/review" element={<CompoundReview />}/>
 
-        <h1>Hii</h1>
+      
 
         
         
