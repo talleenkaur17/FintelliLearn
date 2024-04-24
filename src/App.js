@@ -42,7 +42,7 @@ function App() {
         <Route path="/quiz/retirement" element={<CaseStudy/>} />
         <Route path="/calculate" element={<FinanceCalculator/>} />
         <Route  path="/compound-interest" element={<Compound />}/>
-        <Route  path="/review" element={<CompoundReview />}/>
+        
         <Route  path="/tracker" element={<Tracker />}/>
 
       
