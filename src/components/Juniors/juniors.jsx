@@ -31,10 +31,10 @@ const Juniors = () => {
               </Link>
 
               {/* Quiz Module */}
-              <Link to="/quiz" className="hover:no-underline">
+              <Link to="/games" className="hover:no-underline">
                 <div className="bg-yellow-200 h-full p-8 rounded-lg shadow-md cursor-pointer hover:bg-yellow-300 flex justify-center items-center flex-col">
-                  <h2 className="text-2xl font-semibold mb-4">Quiz</h2>
-                  <p className="text-base">Test Your Financial Savvy: Dive into Interactive Finance Quizzes.</p>
+                  <h2 className="text-2xl font-semibold mb-4">Fun Zone</h2>
+                  <p className="text-base">AdventureQuest: Explore, Learn, Win!</p>
                 </div>
               </Link>
 

@@ -16,6 +16,11 @@ import FinanceCalculator from "./components/FinanceCalculator/FinanceCalculator"
 import Compound from "./components/CompoundInterest/Compound";
 import CompoundReview from "./components/CompoundReview/CompoundReview";
 import Tracker from "./components/tracker/tracker";
+import InvestmentTime from "./components/InvestmentTime/InvestmentTime";
+import Seniors from "./components/Seniors/Seniors";
+import Games from "./components/Games/Games";
+
+
 
 
 
@@ -33,7 +38,8 @@ function App() {
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/profile" element={<Profile/>} />
         <Route path="/juniors" element={<Juniors/>} />
-        <Route path="/juniors" element={<Juniors/>} />
+        <Route path="/seniors" element={<Seniors/>} />
+       
         <Route path="/news" element={<News/>} />
         <Route path="/budgeting" element={<Budget/>} />
 
@@ -44,6 +50,10 @@ function App() {
         <Route  path="/compound-interest" element={<Compound />}/>
         
         <Route  path="/tracker" element={<Tracker />}/>
+        <Route  path="/investment" element={<InvestmentTime/>}/>
+        <Route  path="/games" element={<Games/>}/>
+    
+       
 
       
 

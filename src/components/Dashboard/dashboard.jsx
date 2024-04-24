@@ -14,12 +14,7 @@ function Dashboard() {
             <li>
               <Link to="/dashboard" className="block py-2 px-4 rounded hover:bg-gray-700"><FontAwesomeIcon icon={faHome} style={{ color: 'white', marginRight: '0.5rem' }} />Home</Link>
             </li>
-            <li>
-              <Link to="/discuss" className="block py-2 px-4 rounded hover:bg-gray-700">
-                <FontAwesomeIcon icon={faUsers} style={{ marginRight: '0.5rem', color: 'white' }} /> {/* Icon */}
-                Community Forum
-              </Link>
-            </li>
+            
             <li>
               <Link to="/news" className="block py-2 px-4 rounded hover:bg-gray-700" ><FontAwesomeIcon icon={faNewspaper} style={{ color: 'white', marginRight: '0.5rem' }} />News</Link>
             </li>
@@ -27,9 +22,16 @@ function Dashboard() {
               <Link to="/tracker" className="block py-2 px-4 rounded hover:bg-gray-700" ><FontAwesomeIcon icon={faNewspaper} style={{ color: 'white',marginRight: '0.5rem' }}/>Budget Tracker</Link>
             </li>
             <li>
-              <Link to="/" className="block py-2 px-4 rounded hover:bg-gray-700" ><FontAwesomeIcon icon={faSignOutAlt} style={{ color: 'white',marginRight: '0.5rem' }}/>Logout</Link>
+            
               <Link to="/calculate" className="block py-2 px-4 rounded hover:bg-gray-700" ><FontAwesomeIcon icon={faCalculator} style={{ color: 'white', marginRight: '0.5rem' }} />Financial Calculator</Link>
             </li>
+            <li>
+              <Link to="/discuss" className="block py-2 px-4 rounded hover:bg-gray-700">
+                <FontAwesomeIcon icon={faUsers} style={{ marginRight: '0.5rem', color: 'white' }} /> {/* Icon */}
+                Community Forum
+              </Link>
+            </li>
+
             <li>
               <Link to="/" className="block py-2 px-4 rounded hover:bg-gray-700" ><FontAwesomeIcon icon={faSignOutAlt} style={{ color: 'white', marginRight: '0.5rem' }} />Logout</Link>
             </li>
