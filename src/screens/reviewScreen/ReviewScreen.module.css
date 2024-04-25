@@ -5,22 +5,26 @@
     display: flex;
     flex-direction: column;
     background: linear-gradient(90deg, #fff 50%, #00ffea 50%);
+    overflow: hidden;
   }
   
   .reviewScreen {
     padding: 2em 2em 0em 2em;
     display: flex;
     flex-direction: column;
+    overflow: hidden;
   }
   
   .columnContainer {
     display: flex;
     flex-direction: row;
     gap: 20px;
+    overflow: hidden;
   }
   
   .column {
     flex-basis: 50%;
+    overflow: hidden;
   }
   
   .btnDiv {
@@ -28,6 +32,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
   }
   
   .buttonStyling {
@@ -42,20 +47,24 @@
     text-align: center;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     color: #000;
+    overflow: hidden;
   }
   
   .btnDiv {
     padding-bottom: 2em;
+    overflow: hidden;
   }
   
   .retakeBtn {
     composes: buttonStyling;
     background-color: #fff;
     border: 1px solid #fff;
+    overflow: hidden;
   }
   
   .retakeBtn:hover {
     border: 1px solid #00ffea;
+    overflow: hidden;
   }
   
   /** Responsive Styling **/
@@ -66,10 +75,12 @@
   
     .columnContainer {
       flex-direction: column;
+      overflow: hidden;
     }
   
     .btnDiv {
       padding-bottom: 2em;
+      overflow: hidden;
     }
   }
   

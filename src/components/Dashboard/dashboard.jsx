@@ -35,6 +35,10 @@ function Dashboard() {
             <li>
               <Link to="/" className="block py-2 px-4 rounded hover:bg-gray-700" ><FontAwesomeIcon icon={faSignOutAlt} style={{ color: 'white', marginRight: '0.5rem' }} />Logout</Link>
             </li>
+            <li>
+            <Link to="/bot" className="block py-2 px-4 rounded hover:bg-gray-700" ><FontAwesomeIcon icon={faSignOutAlt} style={{ color: 'white', marginRight: '0.5rem' }} />Bot</Link>
+
+            </li>
           </ul>
         </div>
       </div>
