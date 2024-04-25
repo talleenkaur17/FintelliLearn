@@ -30,7 +30,7 @@ const Quiz = () => {
         <h1 className='text-xl p-2 mx-20'>Navigating the Road to Retirement: Sophia's Financial Journey</h1>
         <div className='p-5 flex'>
           <div className='mx-20'>
-            <iframe src="https://drive.google.com/file/d/1XUo3Nfpyu-5jjQUTU9vRQbXd2-Xwpv5J/preview" width="400" height="300" allow="autoplay"></iframe>
+          <iframe src="https://drive.google.com/file/d/1XUo3Nfpyu-5jjQUTU9vRQbXd2-Xwpv5J/preview" width="400" height="300" allow="autoplay"></iframe>
           </div>
           <div className="w-full md:w-1/3 bg-gray-200 p-5 ml-3 rounded shadow-md">
             <h2 className="text-2xl font-semibold mb-3">Test Your Knowledge</h2>

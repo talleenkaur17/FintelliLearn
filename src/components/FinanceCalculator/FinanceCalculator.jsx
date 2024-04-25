@@ -26,8 +26,8 @@ const FinanceCalculator = () => {
         {/* Budget Planner */}
         <Link to="/budget-planner" className="flex-1 bg-gray-100 p-6 rounded-lg shadow-md text-center transition duration-300 hover:bg-gray-200">
           <div>
-            <h2 className="text-xl font-semibold mb-4">Budget Planner</h2>
-            <p>Create a budget plan to manage your finances efficiently and achieve your financial goals.</p>
+            <h2 className="text-xl font-semibold mb-4">Inflation Calculator </h2>
+            <p>Track the effects of inflation with our handy inflation calculator, ensuring your financial plans stay on target.</p>
           </div>
         </Link>
       </div>

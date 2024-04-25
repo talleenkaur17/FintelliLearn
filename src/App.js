@@ -19,11 +19,9 @@ import Tracker from "./components/tracker/tracker";
 import InvestmentTime from "./components/InvestmentTime/InvestmentTime";
 import Seniors from "./components/Seniors/Seniors";
 import Games from "./components/Games/Games";
-
-
-
-
-
+import Savings from "./components/Savings/Savings";
+import ImpSavings from "./components/ImpSavings/ImpSavings";
+import Master from "./components/MasterSaving/Master";
 
 
 function App() {
@@ -52,6 +50,9 @@ function App() {
         <Route  path="/tracker" element={<Tracker />}/>
         <Route  path="/investment" element={<InvestmentTime/>}/>
         <Route  path="/games" element={<Games/>}/>
+        <Route  path="/savings" element={<Savings/>}/>
+        <Route  path="/power-of-saving" element={<ImpSavings/>}/>
+        <Route  path="/master-saving" element={<Master/>}/>
     
        
 
