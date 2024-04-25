@@ -23,6 +23,7 @@ import Savings from "./components/Savings/Savings";
 import ImpSavings from "./components/ImpSavings/ImpSavings";
 import Master from "./components/MasterSaving/Master";
 import Bot from "./bot";
+import ContextProvider from "./context/context";
 
 
 function App() {
@@ -54,7 +55,7 @@ function App() {
         <Route  path="/savings" element={<Savings/>}/>
         <Route  path="/power-of-saving" element={<ImpSavings/>}/>
         <Route  path="/master-saving" element={<Master/>}/>
-        <Route  path="/bot" element={<Bot/>}/>
+        <Route  path="/bot" element={<ContextProvider><Bot/></ContextProvider>}/>
       
     
        

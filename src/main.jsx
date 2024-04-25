@@ -1,4 +1,4 @@
-
+/** 
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import Bot from "./bot.jsx"
@@ -10,3 +10,4 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <Bot />
   </ContextProvider>,
 )
+*/

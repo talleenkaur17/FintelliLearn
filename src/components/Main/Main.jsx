@@ -1,9 +1,10 @@
 import React, { useContext } from 'react'
 import './Main.css'
 import { assets } from '../../assets/assets'
-import context from '../../context/context'
+import { context } from '../../context/context'
 
-const Main = () => {
+
+const MainBot = () => {
 
   const{onSent,recentPrompt,showResult,loading,resultData,setInput,input} = useContext(context)
   return (
@@ -63,4 +64,4 @@ const Main = () => {
   )
 }
 
-export default Main
+export default MainBot
