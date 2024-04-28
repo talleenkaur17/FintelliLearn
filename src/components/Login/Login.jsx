@@ -48,7 +48,7 @@ function Login() {
             <h3>Log in</h3>
 
             <p className="txt-1">
-              New to fintellilearn ? <Link to="/signup"> Register Here..</Link>
+              New to FinShaala ? <Link to="/signup"> Register Here..</Link>
             </p>
           </div>
           <div className="input-form">

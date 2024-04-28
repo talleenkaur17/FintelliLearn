@@ -18,7 +18,7 @@ const Start = ({ setName, setTimeOut }) => {
         marginTop: "300px",
       }}
     >
-      <h1>Kaun Bnega Crorepati with FintelliLearn</h1>
+      <h1>Kaun Bnega Crorepati with FinShaala</h1>
       <input
         type="text"
         placeholder="Enter Name"

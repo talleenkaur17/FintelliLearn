@@ -12,10 +12,10 @@ const Welcome = () => {
         
         <div className="container content" id="main-container">
           <div className="text-content">
-            <h1>FintelliLearn</h1>
+            <h1>FinShaala</h1>
             <p>
             Master Your Finances, Shape Your Future:  <br />
-            FintelliLearn - Where Learning Meets Investment Innovation
+             Where Learning Meets Investment Innovation
             </p>
             <div className="button">
               <Link to="/login">

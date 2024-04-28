@@ -11,7 +11,7 @@ const Savings = () => {
       <Header />
       <h2 className="pt-8 flex justify-center font-bold text-2xl text-gray-700 transition-all duration-1000 hover:font-normal hover:text-red-500">SAVINGS</h2>
       <div className="border border-gray-300 p-4 rounded-lg">
-        <p className="pt-4 text-blue-500 text-lg font-bold italic text-center">Fintel's Savings Adventure: Let's Journey into Financial Wisdom!</p>
+        <p className="pt-4 text-blue-500 text-lg font-bold italic text-center">FinShaala's Savings Adventure: Let's Journey into Financial Wisdom!</p>
       </div>
       <div className="pt-6">
         <table className="w-full mx-auto border-collapse border border-gray-200">

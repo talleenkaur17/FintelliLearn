@@ -19,7 +19,7 @@ const MainBot = () => {
           {!showResult
           ?<>
           <div className="greet">
-          <p><span>Hello, Nitya!</span></p>
+          <p><span>Welcome to financial Health Assessment Bot!</span></p>
           <p>How can I help you today?</p>
         </div>
         

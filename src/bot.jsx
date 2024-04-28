@@ -8,7 +8,7 @@ import MainBot from './components/Main/Main'
 const Bot = () => {
   return (
     <>
-      <Sidebar/>
+  
       <MainBot/>
       
     </>
