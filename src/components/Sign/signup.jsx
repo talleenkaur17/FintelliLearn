@@ -1,9 +1,11 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import logo from "./pana.png";
-import { useNavigate } from "react-router-dom";
 import { createUserWithEmailAndPassword } from "firebase/auth";
-import { auth } from "../../utils/firebase";
+import { auth, db } from "../../utils/firebase";
+import { setDoc, doc } from "firebase/firestore";
 import "./signup.scss";
 
 function Register() {
@@ -11,25 +13,36 @@ function Register() {
   const [uname, setuname] = useState("");
   const [password, setpassval] = useState("");
   const navigate = useNavigate();
-  
+
   // Function to handle form submission
   const handleFormSubmit = (e) => {
     e.preventDefault(); // Prevent default form submission
-  
+
     // Create user with email and password
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         // User signed up successfully
         const user = userCredential.user;
         console.log("User signed up:", user);
-        // Optionally, you can navigate to another page upon successful registration
-        navigate('/login'); // Redirect to login page
+        // Save user data to Firestore
+        if (user) {
+          setDoc(doc(db, "Users", user.uid), {
+            // Corrected user.id to user.uid
+            email: user.email,
+            username: uname,
+          });
+          toast.success("Registration successful! Please log in.");
+        }
+        // Redirect to login page
+        navigate("/login");
       })
       .catch((error) => {
         // Handle errors
         const errorCode = error.code;
         const errorMessage = error.message;
         console.error("Error signing up:", errorCode, errorMessage);
+        // Trigger error notification
+        toast.error(`Error: ${errorMessage}`);
       });
   };
 
@@ -43,30 +56,29 @@ function Register() {
           <div className="top-box">
             <h3>Signup</h3>
             <p className="txt-1">
-              Already registered ? <Link to="/login"> Go to Login Page..</Link>
+              Already registered? <Link to="/login"> Go to Login Page..</Link>
             </p>
           </div>
           <div className="input-form">
             <form onSubmit={handleFormSubmit}>
-              <label className="lab-font" htmlFor="emil1">
+              <label className="lab-font" htmlFor="uname">
                 User Name
               </label>
               <input
-                placeholder=" enter Username..."
-                type="name"
+                placeholder="Enter Username..."
+                type="text"
                 name="uname"
                 autoComplete="off"
                 onChange={(e) => {
                   setuname(e.target.value);
                 }}
-                id="emil1"
+                id="emil1" // Keeping this id as per your request
               />
-
-              <label className="lab-font" htmlFor="emil1">
+              <label className="lab-font" htmlFor="email">
                 Email address
               </label>
               <input
-                placeholder=" enter your email...."
+                placeholder="Enter your email..."
                 type="email"
                 name="email"
                 onChange={(e) => {
@@ -78,7 +90,7 @@ function Register() {
                 Password
               </label>
               <input
-                placeholder=" enter your password...."
+                placeholder="Enter your password..."
                 type="password"
                 name="password"
                 onChange={(e) => {
@@ -96,4 +108,5 @@ function Register() {
     </div>
   );
 }
+
 export default Register;

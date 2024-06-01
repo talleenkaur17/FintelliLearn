@@ -1,41 +1,43 @@
-//login jsx file
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import logo from "./rafiki.png";
-import { useNavigate } from "react-router-dom";
 import "./Login.scss";
 import { auth } from "../../utils/firebase";
 import { signInWithEmailAndPassword } from "firebase/auth";
 
-//i can 
-//hello
+// Make sure to initialize the ToastContainer somewhere in your app, ideally in App.js
+// import { ToastContainer } from 'react-toastify';
+
 function Login() {
   const [email, setemailval] = useState("");
   const [password, setpassval] = useState("");
   const navigate = useNavigate();
+
   const handleFormSubmit = (e) => {
     e.preventDefault(); // Prevent default form submission
-   
+
     // Sign in user with email and password
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         // User signed in successfully
         const user = userCredential.user;
         console.log("User signed in:", user);
+        // Trigger success notification
+        toast.success("Login successful!");
         // Redirect user to another page upon successful login
-        navigate('/dashboard');
+        navigate("/dashboard");
       })
       .catch((error) => {
         // Handle errors
         const errorCode = error.code;
         const errorMessage = error.message;
         console.error("Error signing in:", errorCode, errorMessage);
-        // You can optionally show an error message to the user
+        // Trigger error notification
+        toast.error("Invalid email or password. Please try again.");
       });
   };
-
-
-  
 
   return (
     <div className="column">
@@ -48,33 +50,29 @@ function Login() {
             <h3>Log in</h3>
 
             <p className="txt-1">
-              New to FinShaala ? <Link to="/signup"> Register Here..</Link>
+              New to FinShaala? <Link to="/signup"> Register Here..</Link>
             </p>
           </div>
           <div className="input-form">
-            <form  onSubmit={handleFormSubmit}>
-              <label className="lab-font" for="emil1">
+            <form onSubmit={handleFormSubmit}>
+              <label className="lab-font" htmlFor="emil1">
                 Email address
               </label>
               <input
-                placeholder=" enter your email...."
+                placeholder="Enter your email..."
                 type="email"
                 name="mail"
-                onChange={(e) => {
-                  setemailval(e.target.value);
-                }}
+                onChange={(e) => setemailval(e.target.value)}
                 id="emil1"
               />
-              <label className="lab-font" for="pwd1">
+              <label className="lab-font" htmlFor="pwd1">
                 Password
               </label>
               <input
-                placeholder=" enter your password...."
+                placeholder="Enter your password..."
                 type="password"
                 name="password"
-                onChange={(e) => {
-                  setpassval(e.target.value);
-                }}
+                onChange={(e) => setpassval(e.target.value)}
                 id="pwd1"
               />
               <button type="submit" id="sub_button" className="button-block">
@@ -87,4 +85,5 @@ function Login() {
     </div>
   );
 }
+
 export default Login;
