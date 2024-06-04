@@ -6,14 +6,13 @@ import logo from "./rafiki.png";
 import "./Login.scss";
 import { auth } from "../../utils/firebase";
 import { signInWithEmailAndPassword } from "firebase/auth";
-
-// Make sure to initialize the ToastContainer somewhere in your app, ideally in App.js
-// import { ToastContainer } from 'react-toastify';
+import { useAuth } from "../../AuthContext";
 
 function Login() {
   const [email, setemailval] = useState("");
   const [password, setpassval] = useState("");
   const navigate = useNavigate();
+  const { login } = useAuth();
 
   const handleFormSubmit = (e) => {
     e.preventDefault(); // Prevent default form submission
@@ -26,6 +25,8 @@ function Login() {
         console.log("User signed in:", user);
         // Trigger success notification
         toast.success("Login successful!");
+        // Update auth context
+        login();
         // Redirect user to another page upon successful login
         navigate("/dashboard");
       })
@@ -48,7 +49,6 @@ function Login() {
         <div className="column1">
           <div className="top-box">
             <h3>Log in</h3>
-
             <p className="txt-1">
               New to FinShaala? <Link to="/signup"> Register Here..</Link>
             </p>

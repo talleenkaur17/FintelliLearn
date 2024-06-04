@@ -22,7 +22,7 @@ const Profile = () => {
     const unsubscribe = onAuthStateChanged(auth, async (user) => {
       if (user) {
         // Fetch user data from Firestore
-        const userDoc = await getDoc(doc(db, "Users", user.uid));
+        const userDoc = await getDoc(doc(db, "users", user.uid));
         if (userDoc.exists()) {
           setUserData(userDoc.data());
           setFormValues({
@@ -57,7 +57,7 @@ const Profile = () => {
     // Save user data to Firestore
     const currentUser = auth.currentUser;
     if (currentUser) {
-      setDoc(doc(db, "Users", currentUser.uid), {
+      setDoc(doc(db, "users", currentUser.uid), {
         username: formValues.username,
         profession: formValues.profession,
         dob: formValues.dob,

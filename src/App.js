@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import React from "react";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -11,7 +11,6 @@ import Juniors from "./components/Juniors/juniors";
 import News from "./components/News/news";
 import Budget from "./components/Budgets/budgeting";
 import Quiz from "./components/Quiz/quiz";
-
 import CaseStudy from "./components/CaseStudy/CaseStudy";
 import FinanceCalculator from "./components/FinanceCalculator/FinanceCalculator";
 import Compound from "./components/CompoundInterest/Compound";
@@ -25,47 +24,105 @@ import ImpSavings from "./components/ImpSavings/ImpSavings";
 import Master from "./components/MasterSaving/Master";
 import Bot from "./bot";
 import ContextProvider from "./context/context";
+import { AuthProvider } from "./AuthContext";
+import ProtectedRoute from "./ProtectedRoute";
+import PennyPlanner from "./components/PennyPlanner/PennyPlanner";
 
 function App() {
   return (
-    <div className="App">
+    <AuthProvider>
       <Router>
         <Routes>
           <Route path="/" element={<Welcome />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Register />} />
-          <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/profile" element={<Profile />} />
-          <Route path="/juniors" element={<Juniors />} />
-          <Route path="/seniors" element={<Seniors />} />
-
-          <Route path="/news" element={<News />} />
-          <Route path="/budgeting" element={<Budget />} />
-
-          <Route path="/quiz" element={<Quiz />} />
-          <Route path="/quiz/saving" element={<CaseStudy />} />
-          <Route path="/quiz/retirement" element={<CaseStudy />} />
-          <Route path="/calculate" element={<FinanceCalculator />} />
-          <Route path="/compound-interest" element={<Compound />} />
-
-          <Route path="/tracker" element={<Tracker />} />
-          <Route path="/investment" element={<InvestmentTime />} />
-          <Route path="/games" element={<Games />} />
-          <Route path="/savings" element={<Savings />} />
-          <Route path="/power-of-saving" element={<ImpSavings />} />
-          <Route path="/master-saving" element={<Master />} />
+          <Route
+            path="/dashboard"
+            element={<ProtectedRoute element={Dashboard} />}
+          />
+          <Route
+            path="/profile"
+            element={<ProtectedRoute element={Profile} />}
+          />
+          <Route
+            path="/juniors"
+            element={<ProtectedRoute element={Juniors} />}
+          />
+          <Route
+            path="/seniors"
+            element={<ProtectedRoute element={Seniors} />}
+          />
+          <Route path="/news" element={<ProtectedRoute element={News} />} />
+          <Route
+            path="/budgeting"
+            element={<ProtectedRoute element={Budget} />}
+          />
+          <Route path="/quiz" element={<ProtectedRoute element={Quiz} />} />
+          <Route
+            path="/quiz/saving"
+            element={<ProtectedRoute element={CaseStudy} />}
+          />
+          <Route
+            path="/quiz/retirement"
+            element={<ProtectedRoute element={CaseStudy} />}
+          />
+          <Route
+            path="/calculate"
+            element={<ProtectedRoute element={FinanceCalculator} />}
+          />
+          <Route
+            path="/compound-interest"
+            element={<ProtectedRoute element={Compound} />}
+          />
+          <Route
+            path="/tracker"
+            element={<ProtectedRoute element={Tracker} />}
+          />
+          <Route
+            path="/investment"
+            element={<ProtectedRoute element={InvestmentTime} />}
+          />
+          <Route path="/games" element={<ProtectedRoute element={Games} />} />
+          <Route
+            path="/savings"
+            element={<ProtectedRoute element={Savings} />}
+          />
+          <Route
+            path="/power-of-saving"
+            element={<ProtectedRoute element={ImpSavings} />}
+          />
+          <Route
+            path="/master-saving"
+            element={<ProtectedRoute element={Master} />}
+          />
           <Route
             path="/bot"
             element={
-              <ContextProvider>
-                <Bot />
-              </ContextProvider>
+              <ProtectedRoute
+                element={() => (
+                  <ContextProvider>
+                    <Bot />
+                  </ContextProvider>
+                )}
+              />
+            }
+          />
+          <Route
+            path="/play-penny"
+            element={
+              <ProtectedRoute
+                element={() => (
+                  <ContextProvider>
+                    <PennyPlanner />
+                  </ContextProvider>
+                )}
+              />
             }
           />
         </Routes>
+        <ToastContainer />
       </Router>
-      <ToastContainer />
-    </div>
+    </AuthProvider>
   );
 }
 

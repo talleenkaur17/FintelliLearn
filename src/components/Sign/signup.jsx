@@ -26,7 +26,7 @@ function Register() {
         console.log("User signed up:", user);
         // Save user data to Firestore
         if (user) {
-          setDoc(doc(db, "Users", user.uid), {
+          setDoc(doc(db, "users", user.uid), {
             // Corrected user.id to user.uid
             email: user.email,
             username: uname,

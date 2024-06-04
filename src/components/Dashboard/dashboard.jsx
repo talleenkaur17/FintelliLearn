@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
+  faUserCircle,
   faHome,
   faNewspaper,
   faUsers,
@@ -24,7 +25,7 @@ function Dashboard() {
                 className="block py-2 px-4 rounded hover:bg-gray-700"
               >
                 <FontAwesomeIcon
-                  icon={faHome}
+                  icon={faUserCircle}
                   style={{ color: "white", marginRight: "0.5rem" }}
                 />
                 Profile
