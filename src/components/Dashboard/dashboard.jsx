@@ -1,4 +1,6 @@
 import React from "react";
+import { useAuth } from "../../AuthContext";
+import { Navigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -13,130 +15,111 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 function Dashboard() {
+  const { isAuthenticated, logout } = useAuth();
+
+  // Redirect to login if not authenticated
+  if (!isAuthenticated) {
+    return <Navigate to="/login" replace />;
+  }
+
   return (
-    <div className="flex h-screen">
-      <div className="w-1/4 bg-blue-900 text-white">
-        <div className="p-4">
-          <h2 className="text-2xl font-bold mb-4">FinShaala</h2>
+    <div className="flex h-screen bg-gray-100">
+      <div className="w-1/4 bg-blue-800 text-white flex flex-col">
+        <div className="p-6 border-b border-blue-700">
+          <h2 className="text-3xl font-bold mb-4">FinShaala</h2>
+        </div>
+        <div className="flex-grow p-4">
           <ul className="space-y-4">
             <li>
               <Link
                 to="/profile"
-                className="block py-2 px-4 rounded hover:bg-gray-700"
+                className="flex items-center py-2 px-4 rounded hover:bg-blue-700 transition-colors"
               >
-                <FontAwesomeIcon
-                  icon={faUserCircle}
-                  style={{ color: "white", marginRight: "0.5rem" }}
-                />
+                <FontAwesomeIcon icon={faUserCircle} className="mr-3" />
                 Profile
               </Link>
             </li>
             <li>
               <Link
                 to="/dashboard"
-                className="block py-2 px-4 rounded hover:bg-gray-700"
+                className="flex items-center py-2 px-4 rounded hover:bg-blue-700 transition-colors"
               >
-                <FontAwesomeIcon
-                  icon={faHome}
-                  style={{ color: "white", marginRight: "0.5rem" }}
-                />
+                <FontAwesomeIcon icon={faHome} className="mr-3" />
                 Home
               </Link>
             </li>
-
             <li>
               <Link
                 to="/news"
-                className="block py-2 px-4 rounded hover:bg-gray-700"
+                className="flex items-center py-2 px-4 rounded hover:bg-blue-700 transition-colors"
               >
-                <FontAwesomeIcon
-                  icon={faNewspaper}
-                  style={{ color: "white", marginRight: "0.5rem" }}
-                />
+                <FontAwesomeIcon icon={faNewspaper} className="mr-3" />
                 News
               </Link>
             </li>
             <li>
               <Link
                 to="/tracker"
-                className="block py-2 px-4 rounded hover:bg-gray-700"
+                className="flex items-center py-2 px-4 rounded hover:bg-blue-700 transition-colors"
               >
-                <FontAwesomeIcon
-                  icon={faNewspaper}
-                  style={{ color: "white", marginRight: "0.5rem" }}
-                />
+                <FontAwesomeIcon icon={faNewspaper} className="mr-3" />
                 Budget Tracker
               </Link>
             </li>
             <li>
               <Link
                 to="/calculate"
-                className="block py-2 px-4 rounded hover:bg-gray-700"
+                className="flex items-center py-2 px-4 rounded hover:bg-blue-700 transition-colors"
               >
-                <FontAwesomeIcon
-                  icon={faCalculator}
-                  style={{ color: "white", marginRight: "0.5rem" }}
-                />
+                <FontAwesomeIcon icon={faCalculator} className="mr-3" />
                 Financial Calculator
               </Link>
             </li>
             <li>
               <Link
                 to="/discuss"
-                className="block py-2 px-4 rounded hover:bg-gray-700"
+                className="flex items-center py-2 px-4 rounded hover:bg-blue-700 transition-colors"
               >
-                <FontAwesomeIcon
-                  icon={faUsers}
-                  style={{ marginRight: "0.5rem", color: "white" }}
-                />{" "}
-                {/* Icon */}
+                <FontAwesomeIcon icon={faUsers} className="mr-3" />
                 Community Forum
               </Link>
             </li>
             <li>
               <Link
                 to="/bot"
-                className="block py-2 px-4 rounded hover:bg-gray-700"
+                className="flex items-center py-2 px-4 rounded hover:bg-blue-700 transition-colors"
               >
-                <FontAwesomeIcon
-                  icon={faMoneyBillAlt}
-                  style={{ color: "white", marginRight: "0.5rem" }}
-                />
+                <FontAwesomeIcon icon={faMoneyBillAlt} className="mr-3" />
                 Financial Health Assessment Bot
               </Link>
             </li>
-
             <li>
-              <Link
-                to="/"
-                className="block py-2 px-4 rounded hover:bg-gray-700"
+              <button
+                onClick={logout}
+                className="flex items-center py-2 px-4 rounded hover:bg-blue-700 transition-colors"
               >
-                <FontAwesomeIcon
-                  icon={faSignOutAlt}
-                  style={{ color: "white", marginRight: "0.5rem" }}
-                />
+                <FontAwesomeIcon icon={faSignOutAlt} className="mr-3" />
                 Logout
-              </Link>
+              </button>
             </li>
           </ul>
         </div>
       </div>
-      <div className="w-3/4 bg-gray-200 p-4">
-        <h2 className="text-2xl text-blue-700 text-center p-10 mx-4 font-bold">
+      <div className="w-3/4 p-10">
+        <h2 className="text-3xl text-blue-800 font-bold mb-8 text-center">
           Empower Your Learning Journey with FinShaala
         </h2>
-        <div className="flex justify-between mt-8">
-          <div className="w-5/12 bg-white p-8 rounded-lg shadow-md cursor-pointer hover:bg-blue-500 hover:text-white">
-            <Link to="/juniors">
+        <div className="flex justify-between space-x-8">
+          <div className="w-1/2 bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow cursor-pointer">
+            <Link to="/juniors" className="block text-center">
               <h3 className="text-2xl font-semibold mb-4">
                 Junior Scholars (Age 12-18)
               </h3>
               <p>Explore Financial Literacy Adventures for Young Minds!</p>
             </Link>
           </div>
-          <div className="w-1/12"></div> {/* Spacer */}
-          <div className="w-5/12 bg-white p-8 rounded-lg shadow-md cursor-pointer hover:bg-blue-500 hover:text-white">
-            <Link to="/seniors">
+          <div className="w-1/2 bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow cursor-pointer">
+            <Link to="/seniors" className="block text-center">
               <h3 className="text-2xl font-semibold mb-4">
                 Financial Mastery Zone (Age 19+)
               </h3>
@@ -144,7 +127,6 @@ function Dashboard() {
             </Link>
           </div>
         </div>
-        {/* Your dashboard content */}
       </div>
     </div>
   );

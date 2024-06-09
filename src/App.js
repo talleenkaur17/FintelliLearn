@@ -27,6 +27,8 @@ import ContextProvider from "./context/context";
 import { AuthProvider } from "./AuthContext";
 import ProtectedRoute from "./ProtectedRoute";
 import PennyPlanner from "./components/PennyPlanner/PennyPlanner";
+import InflationCalculator from "./components/InflationCalculator/InflationCalculator";
+import Retirement from "./components/Retirement/Retirement";
 
 function App() {
   return (
@@ -79,8 +81,8 @@ function App() {
             element={<ProtectedRoute element={Tracker} />}
           />
           <Route
-            path="/investment"
-            element={<ProtectedRoute element={InvestmentTime} />}
+            path="/retirement-calculator"
+            element={<ProtectedRoute element={Retirement} />}
           />
           <Route path="/games" element={<ProtectedRoute element={Games} />} />
           <Route
@@ -90,6 +92,10 @@ function App() {
           <Route
             path="/power-of-saving"
             element={<ProtectedRoute element={ImpSavings} />}
+          />
+          <Route
+            path="/inflation"
+            element={<ProtectedRoute element={InflationCalculator} />}
           />
           <Route
             path="/master-saving"

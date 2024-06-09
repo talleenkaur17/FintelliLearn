@@ -1,75 +1,99 @@
-.profile-container {
+.profile-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   padding: 20px;
+  background: #f4f4f9;
+  font-family: Arial, sans-serif;
+}
+
+.profile-container {
+  width: 100%;
   max-width: 600px;
-  margin: 20px auto;
-  background-color: #ffffff;
+  background: white;
+  padding: 20px;
   border-radius: 10px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
 
-  .profile-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 20px;
+.profile-title {
+  font-size: 2em;
+  text-align: center;
+  margin-bottom: 20px;
+}
 
-    .avatar {
-      width: 80px;
-      height: 80px;
-      background-color: #007bff;
-      color: #ffffff;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 36px;
-      font-weight: bold;
-      text-transform: uppercase;
-    }
+.profile-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 
-    h2 {
-      font-size: 24px;
-      margin-left: 20px;
-    }
+.avatar {
+  width: 50px;
+  height: 50px;
+  background: #6c63ff;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5em;
+  border-radius: 50%;
+}
 
-    button {
-      padding: 10px 20px;
-      background-color: #007bff;
-      color: #ffffff;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: background-color 0.3s;
+.edit-button {
+  background: #6c63ff;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
 
-      &:hover {
-        background-color: #0056b3;
-      }
-    }
-  }
+.edit-button:hover {
+  background: #5750d3;
+}
 
-  .edit-form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+.edit-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
+}
 
-    input {
-      padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      font-size: 16px;
-    }
+.edit-form input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1em;
+}
 
-    button {
-      padding: 10px 20px;
-    }
-  }
+.error {
+  color: red;
+  font-size: 0.9em;
+  margin-top: -10px;
+}
 
-  .profile-details {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+.save-button {
+  background: #6c63ff;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
 
-    .profile-item {
-      font-size: 18px;
-    }
-  }
+.save-button:hover {
+  background: #5750d3;
+}
+
+.profile-details {
+  margin-top: 20px;
+}
+
+.profile-item {
+  margin-bottom: 10px;
+}
+
+.profile-item strong {
+  color: #333;
 }
