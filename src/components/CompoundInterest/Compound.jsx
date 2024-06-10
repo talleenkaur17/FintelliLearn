@@ -34,16 +34,18 @@ const Compound = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100">
+    <div className="min-h-screen bg-teal-50">
       <Header />
-      <div className="container mx-auto py-8">
-        <h1 className="text-3xl font-bold mb-4 text-center p-5">
+      <div className="container mx-auto py-12">
+        <h1 className="text-4xl font-bold mb-8 text-center text-blue-800 overflow-hidden">
           Compound Interest Calculator
         </h1>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div className="bg-white shadow-md rounded px-8 pt-6 pb-8">
-            <h2 className="text-lg font-bold mb-4 text-center">Calculator</h2>
-            <div className="mb-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="bg-white shadow-md rounded-lg p-8">
+            <h2 className="text-2xl font-bold mb-6 text-center text-blue-800">
+              Calculator
+            </h2>
+            <div className="mb-6">
               <label className="block text-gray-700 text-sm font-bold mb-2">
                 Starting Balance:
               </label>
@@ -55,7 +57,7 @@ const Compound = () => {
                 placeholder="Enter starting balance"
               />
             </div>
-            <div className="mb-4">
+            <div className="mb-6">
               <label className="block text-gray-700 text-sm font-bold mb-2">
                 Annual Interest Rate (%):
               </label>
@@ -67,7 +69,7 @@ const Compound = () => {
                 placeholder="Enter annual interest rate"
               />
             </div>
-            <div className="mb-4">
+            <div className="mb-6">
               <label className="block text-gray-700 text-sm font-bold mb-2">
                 Compound Interval:
               </label>
@@ -82,7 +84,7 @@ const Compound = () => {
                 <option value={1}>Annually</option>
               </select>
             </div>
-            <div className="mb-4">
+            <div className="mb-6">
               <label className="block text-gray-700 text-sm font-bold mb-2">
                 Duration:
               </label>
@@ -94,7 +96,7 @@ const Compound = () => {
                 placeholder="Enter duration"
               />
             </div>
-            <div className="mb-4">
+            <div className="mb-6">
               <label className="block text-gray-700 text-sm font-bold mb-2">
                 Duration Type:
               </label>
@@ -110,16 +112,21 @@ const Compound = () => {
             <div className="flex items-center justify-center">
               <button
                 onClick={calculateCompoundInterest}
-                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mr-2"
+                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
               >
                 Calculate
               </button>
             </div>
           </div>
           {result && (
-            <div className="bg-white shadow-md rounded px-8 pt-6 pb-8">
-              <h2 className="text-lg font-bold mb-4 text-center">Result</h2>
-              <p className="text-center">Compound Interest Result: {result}</p>
+            <div className="bg-white shadow-md rounded-lg p-8">
+              <h2 className="text-2xl font-bold mb-6 text-center text-blue-600">
+                Result
+              </h2>
+              <p className="text-center text-lg mb-6">
+                Compound Interest Result:{" "}
+                <span className="font-bold">{result}</span>
+              </p>
               <div className="flex justify-center">
                 <BarChart width={400} height={300} data={chartData}>
                   <CartesianGrid strokeDasharray="3 3" />

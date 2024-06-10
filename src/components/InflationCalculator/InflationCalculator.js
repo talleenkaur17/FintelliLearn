@@ -48,35 +48,36 @@ const InflationCalculator = () => {
           data: yearlyValues,
           borderColor: "rgb(75, 192, 192)",
           backgroundColor: "rgba(75, 192, 192, 0.2)",
+          fill: true,
         },
       ],
     });
   };
 
   return (
-    <div>
+    <div className="bg-teal-50 min-h-screen">
       <Header />
-      <div className="App min-h-screen flex flex-col items-center justify-center bg-gray-100">
-        <header className="text-center p-6 bg-blue-600 text-white w-full">
+      <div className="flex flex-col items-center justify-center py-10">
+        <header className="text-center p-6 text-blue-800 w-full text-4xl">
           <h1 className="text-3xl font-bold">Inflation Calculator</h1>
         </header>
-        <main className="flex flex-col items-center p-6 bg-white rounded shadow-md mt-6">
+        <main className="flex flex-col items-center p-6 bg-white rounded shadow-md mt-6 w-full max-w-2xl">
           <form
             onSubmit={calculateFutureValue}
-            className="flex flex-col items-center space-y-4"
+            className="flex flex-col items-center space-y-6 w-full"
           >
-            <div className="flex items-center space-x-2">
-              <label className="font-semibold">Initial Amount:</label>
+            <div className="flex flex-col w-full">
+              <label className="font-semibold mb-2">Initial Amount:</label>
               <input
                 type="number"
                 value={amount}
                 onChange={(e) => setAmount(Number(e.target.value))}
                 required
-                className="border px-2 py-1 rounded"
+                className="border px-3 py-2 rounded shadow-sm w-full"
               />
             </div>
-            <div className="flex items-center space-x-2">
-              <label className="font-semibold">
+            <div className="flex flex-col w-full">
+              <label className="font-semibold mb-2">
                 Annual Inflation Rate (%):
               </label>
               <input
@@ -84,38 +85,54 @@ const InflationCalculator = () => {
                 value={inflationRate}
                 onChange={(e) => setInflationRate(Number(e.target.value))}
                 required
-                className="border px-2 py-1 rounded"
+                className="border px-3 py-2 rounded shadow-sm w-full"
               />
             </div>
-            <div className="flex items-center space-x-2">
-              <label className="font-semibold">Number of Years:</label>
+            <div className="flex flex-col w-full">
+              <label className="font-semibold mb-2">Number of Years:</label>
               <input
                 type="number"
                 value={years}
                 onChange={(e) => setYears(Number(e.target.value))}
                 required
-                className="border px-2 py-1 rounded"
+                className="border px-3 py-2 rounded shadow-sm w-full"
               />
             </div>
             <button
               type="submit"
-              className="px-4 py-2 bg-blue-600 text-white rounded shadow"
+              className="px-4 py-2 bg-blue-600 text-white rounded shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400"
             >
               Calculate
             </button>
           </form>
           {futureValue !== null && (
-            <div className="mt-6">
-              <h2 className="text-xl font-bold">
-                Future Value: ${futureValue}
-              </h2>
+            <div className="mt-6 p-4 bg-blue-50 border border-blue-200 rounded w-full text-center">
+              <h2 className="text-xl font-bold">Future Value: {futureValue}</h2>
             </div>
           )}
           {graphData && (
             <div className="mt-6 w-full max-w-3xl">
               <Line
                 data={graphData}
-                options={{ responsive: true, maintainAspectRatio: false }}
+                options={{
+                  responsive: true,
+                  maintainAspectRatio: false,
+                  scales: {
+                    x: {
+                      title: {
+                        display: true,
+                        text: "Years",
+                      },
+                    },
+                    y: {
+                      title: {
+                        display: true,
+                        text: "Value",
+                      },
+                    },
+                  },
+                }}
+                height={400}
               />
             </div>
           )}
