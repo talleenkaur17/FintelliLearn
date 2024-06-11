@@ -29,6 +29,7 @@ import ProtectedRoute from "./ProtectedRoute";
 import PennyPlanner from "./components/PennyPlanner/PennyPlanner";
 import InflationCalculator from "./components/InflationCalculator/InflationCalculator";
 import Retirement from "./components/Retirement/Retirement";
+import Forum from "./components/forum/Forum.tsx";
 
 function App() {
   return (
@@ -55,6 +56,7 @@ function App() {
             element={<ProtectedRoute element={Seniors} />}
           />
           <Route path="/news" element={<ProtectedRoute element={News} />} />
+          <Route path="/forum" element={<ProtectedRoute element={Forum} />} />
           <Route
             path="/budgeting"
             element={<ProtectedRoute element={Budget} />}

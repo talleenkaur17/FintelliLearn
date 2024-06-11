@@ -4,6 +4,7 @@ import { Navigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 import {
   faUserCircle,
   faHome,
@@ -79,7 +80,7 @@ function Dashboard() {
             </li>
             <li>
               <Link
-                to="/discuss"
+                to="/forum"
                 className="flex items-center py-2 px-4 rounded hover:bg-blue-700 transition-colors"
               >
                 <FontAwesomeIcon icon={faUsers} className="mr-3" />
