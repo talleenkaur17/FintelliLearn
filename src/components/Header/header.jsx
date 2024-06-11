@@ -24,7 +24,7 @@ const Header = () => {
   };
 
   return (
-    <div>
+    <div className="overflow-hidden">
       {/* Header */}
       <header className="bg-blue-900 p-6 flex justify-between items-center">
         {/* Hamburger Icon */}
