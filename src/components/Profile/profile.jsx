@@ -1,9 +1,18 @@
 import React, { useEffect, useState } from "react";
-import { getDoc, doc, setDoc } from "firebase/firestore";
+import {
+  getDoc,
+  doc,
+  setDoc,
+  getDocs,
+  collection,
+  query,
+  where,
+} from "firebase/firestore";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth, db } from "../../utils/firebase";
-import "./profile.scss";
+import "./profile.scss"; // Assuming you have your SCSS/CSS for profile styling
 import Header from "../Header/header";
+import Avatar from "react-avatar"; // Importing Avatar component for displaying avatars
 
 const Profile = () => {
   const [userData, setUserData] = useState(null);
@@ -16,6 +25,7 @@ const Profile = () => {
     email: "",
     finshaalaId: "",
   });
+  const [totalScore, setTotalScore] = useState(0); // New state for total score
   const [error, setError] = useState("");
 
   useEffect(() => {
@@ -23,14 +33,27 @@ const Profile = () => {
       if (user) {
         const userDoc = await getDoc(doc(db, "users", user.uid));
         if (userDoc.exists()) {
-          setUserData(userDoc.data());
+          const userData = userDoc.data();
+          setUserData(userData);
           setFormValues({
-            username: userDoc.data().username || "",
-            profession: userDoc.data().profession || "",
-            dob: userDoc.data().dob || "",
+            username: userData.username || "",
+            profession: userData.profession || "",
+            dob: userData.dob || "",
             email: user.email || "",
-            finshaalaId: userDoc.data().finshaalaId || "",
+            finshaalaId: userData.finshaalaId || "",
           });
+
+          // Fetch all posts by the user and calculate total score
+          const postsQuery = query(
+            collection(db, "posts"),
+            where("userFirstName", "==", userData.username)
+          );
+          const postDocs = await getDocs(postsQuery);
+          const totalUpvotes = postDocs.docs.reduce(
+            (sum, doc) => sum + (doc.data().score || 0),
+            0
+          );
+          setTotalScore(totalUpvotes);
         } else {
           console.error("No such document!");
         }
@@ -89,12 +112,16 @@ const Profile = () => {
       <Header />
       <div className="profile-page">
         <div className="profile-container">
-          <h1 className="profile-title">Profile Section</h1>
+          <h1 className="profile-title">Finshaala Profile</h1>
 
           <div className="profile-header">
-            <div className="avatar">
-              {userData.username.charAt(0).toUpperCase()}
-            </div>
+            <Avatar
+              size="100"
+              round={true}
+              name={userData.username}
+              // Placeholder image for Avatar
+              className="avatar"
+            />
             <h2>{userData.username}</h2>
             <button
               className="edit-button"
@@ -159,8 +186,8 @@ const Profile = () => {
                 <strong>Date of Birth:</strong> {userData.dob || "Not provided"}
               </div>
               <div className="profile-item">
-                <strong>Finshaala ID:</strong>{" "}
-                {userData.finshaalaId || "Not provided"}
+                <strong>Total Score:</strong> {totalScore}{" "}
+                {/* Display total score */}
               </div>
             </div>
           )}
