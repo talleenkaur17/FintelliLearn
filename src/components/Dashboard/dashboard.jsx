@@ -15,6 +15,8 @@ import {
   faMoneyBillAlt,
 } from "@fortawesome/free-solid-svg-icons";
 
+// import coinsGif from "./coins.gif"; // Make sure to import your coins GIF
+
 function Dashboard() {
   const { isAuthenticated, logout } = useAuth();
 
@@ -32,11 +34,28 @@ function Dashboard() {
           </h2>
         </div>
         <div className="flex-grow p-4">
+          {/* FinPro Section */}
+          <div className="mb-6">
+            <Link
+              to="/Finpro"
+              className="flex items-center py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors"
+            >
+              <div className="flex items-center">
+                <img
+                  // src={coinsGif}
+                  src="https://res.cloudinary.com/duu6ej0qx/image/upload/v1718276712/coin_a758dr.gif"
+                  className="w-8 h-8 mr-3"
+                />
+                <span className="text-xl font-semibold">FinPro</span>
+              </div>
+            </Link>
+          </div>
+          {/* Sidebar Links */}
           <ul className="space-y-4">
             <li>
               <Link
                 to="/profile"
-                className="flex items-center py-2 px-4 rounded hover:bg-blue-700 transition-colors"
+                className="flex items-center py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors"
               >
                 <FontAwesomeIcon icon={faUserCircle} className="mr-3" />
                 Profile
@@ -45,7 +64,7 @@ function Dashboard() {
             <li>
               <Link
                 to="/dashboard"
-                className="flex items-center py-2 px-4 rounded hover:bg-blue-700 transition-colors"
+                className="flex items-center py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors"
               >
                 <FontAwesomeIcon icon={faHome} className="mr-3" />
                 Home
@@ -54,7 +73,7 @@ function Dashboard() {
             <li>
               <Link
                 to="/news"
-                className="flex items-center py-2 px-4 rounded hover:bg-blue-700 transition-colors"
+                className="flex items-center py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors"
               >
                 <FontAwesomeIcon icon={faNewspaper} className="mr-3" />
                 News
@@ -63,7 +82,7 @@ function Dashboard() {
             <li>
               <Link
                 to="/tracker"
-                className="flex items-center py-2 px-4 rounded hover:bg-blue-700 transition-colors"
+                className="flex items-center py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors"
               >
                 <FontAwesomeIcon icon={faNewspaper} className="mr-3" />
                 Budget Tracker
@@ -72,7 +91,7 @@ function Dashboard() {
             <li>
               <Link
                 to="/calculate"
-                className="flex items-center py-2 px-4 rounded hover:bg-blue-700 transition-colors"
+                className="flex items-center py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors"
               >
                 <FontAwesomeIcon icon={faCalculator} className="mr-3" />
                 Financial Calculator
@@ -81,7 +100,7 @@ function Dashboard() {
             <li>
               <Link
                 to="/forum"
-                className="flex items-center py-2 px-4 rounded hover:bg-blue-700 transition-colors"
+                className="flex items-center py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors"
               >
                 <FontAwesomeIcon icon={faUsers} className="mr-3" />
                 Community Forum
@@ -90,7 +109,7 @@ function Dashboard() {
             <li>
               <Link
                 to="/bot"
-                className="flex items-center py-2 px-4 rounded hover:bg-blue-700 transition-colors"
+                className="flex items-center py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors"
               >
                 <FontAwesomeIcon icon={faMoneyBillAlt} className="mr-3" />
                 Financial Health Assessment Bot
@@ -99,7 +118,7 @@ function Dashboard() {
             <li>
               <button
                 onClick={logout}
-                className="flex items-center py-2 px-4 rounded hover:bg-blue-700 transition-colors"
+                className="flex items-center py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors"
               >
                 <FontAwesomeIcon icon={faSignOutAlt} className="mr-3" />
                 Logout

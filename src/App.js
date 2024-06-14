@@ -30,6 +30,11 @@ import PennyPlanner from "./components/PennyPlanner/PennyPlanner";
 import InflationCalculator from "./components/InflationCalculator/InflationCalculator";
 import Retirement from "./components/Retirement/Retirement";
 import Forum from "./components/forum/Forum.tsx";
+import Finpro from './components/Finpro/finpro.jsx';
+
+import LiveMentoring from './components/Finpro/Livementoring';
+import Goodies from "./components/Finpro/Goodies.jsx";
+import Premiumcourses from "./components/Finpro/Premiumcourses.jsx";
 
 function App() {
   return (
@@ -57,6 +62,7 @@ function App() {
           />
           <Route path="/news" element={<ProtectedRoute element={News} />} />
           <Route path="/forum" element={<ProtectedRoute element={Forum} />} />
+          
           <Route
             path="/budgeting"
             element={<ProtectedRoute element={Budget} />}
@@ -82,6 +88,7 @@ function App() {
             path="/tracker"
             element={<ProtectedRoute element={Tracker} />}
           />
+          
           <Route
             path="/retirement-calculator"
             element={<ProtectedRoute element={Retirement} />}
@@ -104,6 +111,23 @@ function App() {
             element={<ProtectedRoute element={Master} />}
           />
           <Route
+            path="/Finpro"
+            element={<ProtectedRoute element={Finpro} />} // Add the Finpro route here
+          />
+           
+          <Route
+            path="/livementoring"
+            element={<ProtectedRoute element={LiveMentoring} />}
+          />
+          <Route
+            path="/premiumcourses"
+            element={<ProtectedRoute element={Premiumcourses} />}
+          />
+           <Route
+            path="/goodies"
+            element={<ProtectedRoute element={Goodies} />}
+          />
+          <Route
             path="/bot"
             element={
               <ProtectedRoute
@@ -113,6 +137,7 @@ function App() {
                   </ContextProvider>
                 )}
               />
+              
             }
           />
           <Route
