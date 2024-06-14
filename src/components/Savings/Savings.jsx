@@ -185,7 +185,7 @@ const Savings = () => {
   return (
     <div className="bg-teal-50">
       <Header />
-      <h2 className="pt-8 flex justify-center font-bold text-4xl text-blue-900  font-serif">
+      <h2 className="pt-8 flex justify-center font-bold text-4xl text-blue-900  font-serif overflow-hidden">
         SAVINGS
       </h2>
       <div className="border border-gray-300 p-4 rounded-lg">

@@ -26,7 +26,7 @@ function Dashboard() {
   }
 
   return (
-    <div className="flex h-screen bg-teal-50">
+    <div className="flex h-screen bg-teal-50 ">
       <div className="w-1/4 bg-blue-800 text-white flex flex-col">
         <div className="p-6 border-b border-blue-700">
           <h2 className="text-3xl font-bold mb-4 font-sans overflow-hidden">
