@@ -1,5 +1,5 @@
 import styles from "./ReviewScreen.module.css";
-import appStyles from "../../components/CaseStudy/CaseStudy.module.css"
+import appStyles from "../../components/CaseStudy/CaseStudy.module.css";
 import { quizData } from "../../utils/quizData";
 import { InfoToolTip } from "../../components/toolTip/InfoToolTip";
 import { Question } from "../../components/question/Question";

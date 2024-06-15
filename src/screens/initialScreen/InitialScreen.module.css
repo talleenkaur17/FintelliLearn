@@ -1,3 +1,16 @@
+/* Hide scrollbar globally */
+* {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer and Edge */
+}
+
+/* Webkit browsers (Chrome, Safari, etc.) */
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* Your existing styles */
+
 .initialScreenWrapper {
   width: 100vw;
   height: 100vh;
