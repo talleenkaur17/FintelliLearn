@@ -31,10 +31,13 @@ import InflationCalculator from "./components/InflationCalculator/InflationCalcu
 import Retirement from "./components/Retirement/Retirement";
 import Forum from "./components/forum/Forum.tsx";
 import Finpro from './components/Finpro/finpro.jsx';
-
+import Hungman from './components/hungman/hungman.jsx';
 import LiveMentoring from './components/Finpro/Livementoring';
 import Goodies from "./components/Finpro/Goodies.jsx";
 import Premiumcourses from "./components/Finpro/Premiumcourses.jsx";
+import FinancialFortune from "./components/FinancialFortune/Home.jsx";
+import Financialresult from "./components/FinancialFortune/Result.jsx";
+
 
 function App() {
   return (
@@ -88,7 +91,8 @@ function App() {
             path="/tracker"
             element={<ProtectedRoute element={Tracker} />}
           />
-          
+            <Route path="/financialhome" element={<FinancialFortune />} />
+            <Route path="/result" element={<Financialresult />} />
           <Route
             path="/retirement-calculator"
             element={<ProtectedRoute element={Retirement} />}
@@ -141,6 +145,32 @@ function App() {
             }
           />
           <Route
+            path="/play-hangman"
+            element={
+              <ProtectedRoute
+                element={() => (
+                  <ContextProvider>
+                    <Hungman />
+                  </ContextProvider>
+                )}
+              />
+
+            }
+          />
+           <Route
+            path="/play-stroop"
+            element={
+              <ProtectedRoute
+                element={() => (
+                  <ContextProvider>
+                    <FinancialFortune/>
+                  </ContextProvider>
+                )}
+              />
+
+            }
+          />
+          <Route
             path="/play-penny"
             element={
               <ProtectedRoute
@@ -150,6 +180,7 @@ function App() {
                   </ContextProvider>
                 )}
               />
+
             }
           />
         </Routes>
