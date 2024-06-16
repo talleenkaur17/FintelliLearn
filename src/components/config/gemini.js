@@ -27,7 +27,6 @@ const generationConfig = {
   topP: 0.95,
   topK: 64,
   maxOutputTokens: 8192,
-  responseMimeType: "text/plain",
 };
 
 export async function runChat(prompt) {
@@ -41,6 +40,14 @@ export async function runChat(prompt) {
         {
           role: "user",
           parts: [{ text: prompt }],
+        },
+        {
+          role: "model",
+          parts: [
+            {
+              text: "Hi there! I'm Finley, your friendly Financial Health Guide!  I'm so excited to help you with your investments! \n\nHow can I help you today?",
+            },
+          ],
         },
         {
           role: "user",
@@ -160,14 +167,6 @@ export async function runChat(prompt) {
           parts: [
             {
               text: "Okay, I can help with a more detailed plan for buying a house!\n\n**1. Assess Your Financial Situation**\n\n* **Calculate your income and expenses:**  Make sure you have a clear picture of your income and regular expenses to understand how much you can comfortably afford for a mortgage.\n* **Check your credit score:** A good credit score will help you get a lower interest rate on your mortgage.\n* **Determine your down payment:** Aim for at least 10% of the purchase price, but a larger down payment can help you get a lower interest rate and avoid private mortgage insurance (PMI).\n\n**2. Get Pre-Approved for a Mortgage**\n\n* **Shop around for lenders:** Compare interest rates and terms from different lenders to find the best deal.\n* **Provide required documentation:** Lenders will need to see your income, credit history, and other financial information to determine your pre-approval amount.\n* **Understand mortgage types:** There are different types of mortgages available, such as fixed-rate and adjustable-rate mortgages. Choose the one that best suits your financial situation and risk tolerance.\n\n**3. Find a Real Estate Agent**\n\n* **Get referrals:** Ask friends, family, or colleagues for recommendations.\n* **Interview agents:**  Talk to several agents to find one who has experience in the area you're interested in and understands your needs.\n* **Discuss your goals and budget:**  Be clear about what you're looking for in a home and how much you're willing to spend.\n\n**4. Start Looking for a House**\n\n* **Define your search criteria:**  Consider factors like location, size, number of bedrooms and bathrooms, and desired amenities.\n* **Attend open houses:** This is a great way to get a feel for different properties and neighborhoods.\n* **Use online resources:**  Websites like Magicbricks, 99acres, and Housing.com can help you find listings and track your favorite properties.\n\n**5. Make an Offer**\n\n* **Work with your agent:** Your agent will help you negotiate a fair price with the seller.\n* **Consider a home inspection:**  This is a crucial step to identify any potential problems with the house before you commit to buying it.\n* **Review the contract:** Make sure you understand all the terms and conditions before signing.\n\n**6. Complete the Purchase**\n\n* **Secure your financing:**  Once your offer is accepted, you'll need to finalize your mortgage loan.\n* **Prepare for closing costs:** These include things like title insurance, appraisal fees, and recording fees.\n* **Sign the closing documents:** This is the final step in the home-buying process.\n\n**Remember, this is a general plan. It's always best to consult with a financial advisor or real estate professional for personalized guidance.** \n\nWould you like me to elaborate on any specific part of the plan? \n\n\n",
-            },
-          ],
-        },
-        {
-          role: "user",
-          parts: [
-            {
-              text: "Help me create a personalized Budget. My income is 50K, and extra expenses are 20K. I also save about 10k",
             },
           ],
         },
