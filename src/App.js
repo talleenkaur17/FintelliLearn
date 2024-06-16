@@ -63,12 +63,6 @@ function App() {
             path="/seniors"
             element={<ProtectedRoute element={Seniors} />}
           />
-<<<<<<< HEAD
-=======
-          <Route path="/news" element={<ProtectedRoute element={News} />} />
-          <Route path="/forum" element={<ProtectedRoute element={Forum} />} />
-
->>>>>>> 58cb9c7d139f78e6066a7b1e57b08e479d7897b1
           <Route
             path="/budgeting"
             element={<ProtectedRoute element={Budget} />}
