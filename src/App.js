@@ -8,7 +8,7 @@ import Register from "./components/Sign/signup";
 import Dashboard from "./components/Dashboard/dashboard";
 import Profile from "./components/Profile/profile";
 import Juniors from "./components/Juniors/juniors";
-import News from "./components/News/news";
+//import News from "./components/News/news";
 import Budget from "./components/Budgets/budgeting";
 import Quiz from "./components/Quiz/quiz";
 import CaseStudy from "./components/CaseStudy/CaseStudy";
@@ -54,7 +54,6 @@ function App() {
             path="/seniors"
             element={<ProtectedRoute element={Seniors} />}
           />
-          <Route path="/news" element={<ProtectedRoute element={News} />} />
           <Route
             path="/budgeting"
             element={<ProtectedRoute element={Budget} />}
