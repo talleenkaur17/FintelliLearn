@@ -1,4 +1,3 @@
-
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import React from "react";
 import { ToastContainer } from "react-toastify";
@@ -9,7 +8,7 @@ import Register from "./components/Sign/signup";
 import Dashboard from "./components/Dashboard/dashboard";
 import Profile from "./components/Profile/profile";
 import Juniors from "./components/Juniors/juniors";
-//import News from "./components/News/news";
+import News from "./components/News/news";
 import Budget from "./components/Budgets/budgeting";
 import Quiz from "./components/Quiz/quiz";
 import CaseStudy from "./components/CaseStudy/CaseStudy";
@@ -39,7 +38,6 @@ import Premiumcourses from "./components/Finpro/Premiumcourses.jsx";
 import FinancialFortune from "./components/FinancialFortune/Home.jsx";
 import Financialresult from "./components/FinancialFortune/Result.jsx";
 import IntroSaving from "./components/JuniorArticles/IntroSaving.jsx";
-
 function App() {
   return (
     <AuthProvider>
@@ -112,6 +110,8 @@ function App() {
             path="/master-saving"
             element={<ProtectedRoute element={Master} />}
           />
+          <Route path="/news" element={<ProtectedRoute element={News} />} />
+          <Route path="/forum" element={<ProtectedRoute element={Forum} />} />
           <Route
             path="/Finpro"
             element={<ProtectedRoute element={Finpro} />} // Add the Finpro route here
