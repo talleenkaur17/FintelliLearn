@@ -4,6 +4,7 @@ import { Navigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 import {
   faUserCircle,
   faHome,
@@ -14,6 +15,8 @@ import {
   faMoneyBillAlt,
 } from "@fortawesome/free-solid-svg-icons";
 
+// import coinsGif from "./coins.gif"; // Make sure to import your coins GIF
+
 function Dashboard() {
   const { isAuthenticated, logout } = useAuth();
 
@@ -23,17 +26,36 @@ function Dashboard() {
   }
 
   return (
-    <div className="flex h-screen bg-gray-100">
+    <div className="flex h-screen bg-teal-50 ">
       <div className="w-1/4 bg-blue-800 text-white flex flex-col">
-        <div className="p-6 border-b border-blue-700">
-          <h2 className="text-3xl font-bold mb-4">FinShaala</h2>
+        <div className="p-6 border-b border-blue-700 overflow-hidden">
+          <h2 className="text-3xl font-bold mb-4 font-sans overflow-hidden">
+            FinShaala
+          </h2>
         </div>
         <div className="flex-grow p-4">
+          {/* FinPro Section */}
+          <div className="mb-6">
+            <Link
+              to="/Finpro"
+              className="flex items-center py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors"
+            >
+              <div className="flex items-center">
+                <img
+                  // src={coinsGif}
+                  src="https://res.cloudinary.com/duu6ej0qx/image/upload/v1718276712/coin_a758dr.gif"
+                  className="w-8 h-8 mr-3"
+                />
+                <span className="text-xl font-semibold">FinPro</span>
+              </div>
+            </Link>
+          </div>
+          {/* Sidebar Links */}
           <ul className="space-y-4">
             <li>
               <Link
                 to="/profile"
-                className="flex items-center py-2 px-4 rounded hover:bg-blue-700 transition-colors"
+                className="flex items-center py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors"
               >
                 <FontAwesomeIcon icon={faUserCircle} className="mr-3" />
                 Profile
@@ -42,7 +64,7 @@ function Dashboard() {
             <li>
               <Link
                 to="/dashboard"
-                className="flex items-center py-2 px-4 rounded hover:bg-blue-700 transition-colors"
+                className="flex items-center py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors"
               >
                 <FontAwesomeIcon icon={faHome} className="mr-3" />
                 Home
@@ -51,7 +73,7 @@ function Dashboard() {
             <li>
               <Link
                 to="/news"
-                className="flex items-center py-2 px-4 rounded hover:bg-blue-700 transition-colors"
+                className="flex items-center py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors"
               >
                 <FontAwesomeIcon icon={faNewspaper} className="mr-3" />
                 News
@@ -60,7 +82,7 @@ function Dashboard() {
             <li>
               <Link
                 to="/tracker"
-                className="flex items-center py-2 px-4 rounded hover:bg-blue-700 transition-colors"
+                className="flex items-center py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors"
               >
                 <FontAwesomeIcon icon={faNewspaper} className="mr-3" />
                 Budget Tracker
@@ -69,7 +91,7 @@ function Dashboard() {
             <li>
               <Link
                 to="/calculate"
-                className="flex items-center py-2 px-4 rounded hover:bg-blue-700 transition-colors"
+                className="flex items-center py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors"
               >
                 <FontAwesomeIcon icon={faCalculator} className="mr-3" />
                 Financial Calculator
@@ -77,8 +99,8 @@ function Dashboard() {
             </li>
             <li>
               <Link
-                to="/discuss"
-                className="flex items-center py-2 px-4 rounded hover:bg-blue-700 transition-colors"
+                to="/forum"
+                className="flex items-center py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors"
               >
                 <FontAwesomeIcon icon={faUsers} className="mr-3" />
                 Community Forum
@@ -87,7 +109,7 @@ function Dashboard() {
             <li>
               <Link
                 to="/bot"
-                className="flex items-center py-2 px-4 rounded hover:bg-blue-700 transition-colors"
+                className="flex items-center py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors"
               >
                 <FontAwesomeIcon icon={faMoneyBillAlt} className="mr-3" />
                 Financial Health Assessment Bot
@@ -96,7 +118,7 @@ function Dashboard() {
             <li>
               <button
                 onClick={logout}
-                className="flex items-center py-2 px-4 rounded hover:bg-blue-700 transition-colors"
+                className="flex items-center py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors"
               >
                 <FontAwesomeIcon icon={faSignOutAlt} className="mr-3" />
                 Logout
@@ -106,24 +128,55 @@ function Dashboard() {
         </div>
       </div>
       <div className="w-3/4 p-10">
-        <h2 className="text-3xl text-blue-800 font-bold mb-8 text-center">
+        <h2 className="text-3xl text-blue-800 font-bold mb-8 text-center font-serif">
           Empower Your Learning Journey with FinShaala
         </h2>
         <div className="flex justify-between space-x-8">
-          <div className="w-1/2 bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow cursor-pointer">
+          <div className="w-1/3 bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow cursor-pointer">
             <Link to="/juniors" className="block text-center">
-              <h3 className="text-2xl font-semibold mb-4">
-                Junior Scholars (Age 12-18)
+              <img
+                src="https://miro.medium.com/v2/resize:fit:1024/0*Wg8lzJC41aYgQXLv.png"
+                alt="Junior Scholars"
+                className="w-full h-48 object-cover mb-4 rounded-lg"
+              />
+              <h3 className="text-2xl font-bold mb-4 font-mono">
+                Junior Scholars
+                <br /> (Age 12-18)
               </h3>
-              <p>Explore Financial Literacy Adventures for Young Minds!</p>
+              <p className="font-semibold">
+                Explore Financial Literacy Adventures for Young Minds!
+              </p>
             </Link>
           </div>
-          <div className="w-1/2 bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow cursor-pointer">
+          <div className="w-1/3 bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow cursor-pointer">
             <Link to="/seniors" className="block text-center">
-              <h3 className="text-2xl font-semibold mb-4">
-                Financial Mastery Zone (Age 19+)
+              <img
+                src="https://www.policybazaar.com/pblife/assets/images/pb_life_1676024257.jpg"
+                alt="Financial Mastery Zone"
+                className="w-full h-48 object-cover mb-4 rounded-lg"
+              />
+              <h3 className="text-2xl font-bold mb-4 font-mono">
+                Financial Mastery Zone (Age 18-60)
               </h3>
-              <p>Discover advanced learning opportunities in Finance!</p>
+              <p className="font-semibold">
+                Discover advanced learning opportunities in Finance!
+              </p>
+            </Link>
+          </div>
+          <div className="w-1/3 bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow cursor-pointer">
+            <Link to="/retirement" className="block text-center">
+              <img
+                src="https://life.futuregenerali.in/media/mkxpbfoz/financial-planning-for-retirement.webp"
+                alt="Retirement Plans"
+                className="w-full h-48 object-cover mb-4 rounded-lg"
+              />
+              <h3 className="text-2xl font-bold mb-4 font-mono">
+                Retire Ease
+                <br /> Age(60+)
+              </h3>
+              <p className="font-semibold">
+                Charting Your Journey to Golden Years
+              </p>
             </Link>
           </div>
         </div>

@@ -12,7 +12,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 
-const Header = () => {
+const FinHeader = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const handleMenuToggle = () => {
@@ -28,6 +28,7 @@ const Header = () => {
       {/* Header */}
       <header className="bg-blue-900 p-6 flex justify-between items-center">
         {/* Hamburger Icon */}
+
         <div>
           <FontAwesomeIcon
             icon={faBars}
@@ -61,6 +62,21 @@ const Header = () => {
           <h1 className="text-xl font-bold mb-4">Menu</h1>
           <nav>
             <ul className="space-y-4">
+              <li>
+                <Link
+                  to="/Finpro"
+                  className="flex items-center py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors"
+                >
+                  <div className="flex items-center">
+                    <img
+                      // src={coinsGif}
+                      src="https://res.cloudinary.com/duu6ej0qx/image/upload/v1718276712/coin_a758dr.gif"
+                      className="w-8 h-8 mr-3"
+                    />
+                    <span className="text-xl font-semibold">FinPro</span>
+                  </div>
+                </Link>
+              </li>
               <li>
                 <Link
                   to="/dashboard"
@@ -140,4 +156,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default FinHeader;
