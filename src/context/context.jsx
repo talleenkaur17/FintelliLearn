@@ -4,7 +4,7 @@ import { runChat } from "../components/config/gemini";
 export const context = createContext();
 
 const ContextProvider = (props) => {
-  const [input, setInput] = useState("");
+  const [input, setInput] = useState('');
   const [chatHistory, setChatHistory] = useState([]);
   const [loading, setLoading] = useState(false);
   const [isSpeaking, setIsSpeaking] = useState(false);
