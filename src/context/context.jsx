@@ -1,22 +1,21 @@
-import { createContext, useState, useEffect } from 'react';
-import { runChat } from '../components/config/gemini';
+import { createContext, useState, useEffect } from "react";
+import { runChat } from "../components/config/gemini";
 
 export const context = createContext();
 
 const ContextProvider = (props) => {
-<<<<<<< HEAD
-  const [input, setInput] = useState('');
+  const [input, setInput] = useState("");
   const [chatHistory, setChatHistory] = useState([]);
   const [loading, setLoading] = useState(false);
   const [isSpeaking, setIsSpeaking] = useState(false);
 
   const formatResponse = (response) => {
-    let formattedResponse = response.replace(/\*\*(.*?)\*\*/g, '<b>$1</b>');
+    let formattedResponse = response.replace(/\*\*(.*?)\*\*/g, "<b>$1</b>");
     formattedResponse = formattedResponse
-      .replace(/;/g, '; <br/>')
-      .replace(/:/g, ': <br/>')
-      .replace(/(\d+)\./g, '<br/>$1.')
-      .replace(/\*/g, '<br/>');
+      .replace(/;/g, "; <br/>")
+      .replace(/:/g, ": <br/>")
+      .replace(/(\d+)\./g, "<br/>$1.")
+      .replace(/\*/g, "<br/>");
     return formattedResponse;
   };
 
@@ -25,7 +24,7 @@ const ContextProvider = (props) => {
       const recognition = new window.webkitSpeechRecognition();
       recognition.continuous = true;
       recognition.interimResults = true;
-      recognition.lang = 'en-US';
+      recognition.lang = "en-US";
 
       recognition.onresult = (event) => {
         const transcript = event.results[0][0].transcript;
@@ -50,13 +49,13 @@ const ContextProvider = (props) => {
         prompt = await handleSpeechInput();
         setInput(prompt);
       } catch (error) {
-        console.error('Speech recognition error:', error);
+        console.error("Speech recognition error:", error);
         setLoading(false);
         return;
       }
     }
 
-    setChatHistory((prev) => [...prev, { prompt, response: 'loading...' }]);
+    setChatHistory((prev) => [...prev, { prompt, response: "loading..." }]);
     try {
       const response = await runChat(prompt);
       const formattedResponse = formatResponse(response);
@@ -66,21 +65,24 @@ const ContextProvider = (props) => {
         return updatedHistory;
       });
     } catch (error) {
-      console.error('Error during conversation:', error);
+      console.error("Error during conversation:", error);
       setChatHistory((prev) => {
         const updatedHistory = [...prev];
         updatedHistory[updatedHistory.length - 1].response =
-          'An error occurred while communicating with the model.';
+          "An error occurred while communicating with the model.";
         return updatedHistory;
       });
     } finally {
       setLoading(false);
-      setInput('');
+      setInput("");
     }
   };
 
   const removeEmojis = (text) => {
-    return text.replace(/([\u{1F600}-\u{1F64F}\u{1F300}-\u{1F5FF}\u{1F680}-\u{1F6FF}\u{1F700}-\u{1F77F}\u{1F780}-\u{1F7FF}\u{1F800}-\u{1F8FF}\u{1F900}-\u{1F9FF}\u{1FA00}-\u{1FA6F}\u{1FA70}-\u{1FAFF}\u{2600}-\u{26FF}\u{2700}-\u{27BF}\u{2B50}-\u{2B55}\u{231A}-\u{23F3}\u{23F0}\u{231B}\u{23F1}-\u{23F2}\u{23E9}-\u{23EF}\u{23F4}-\u{23F7}\u{23F8}-\u{23FA}\u{2B06}\u{2194}-\u{21AA}\u{2B05}\u{2195}-\u{21B7}\u{2B07}\u{21A9}])/gu, '');
+    return text.replace(
+      /([\u{1F600}-\u{1F64F}\u{1F300}-\u{1F5FF}\u{1F680}-\u{1F6FF}\u{1F700}-\u{1F77F}\u{1F780}-\u{1F7FF}\u{1F800}-\u{1F8FF}\u{1F900}-\u{1F9FF}\u{1FA00}-\u{1FA6F}\u{1FA70}-\u{1FAFF}\u{2600}-\u{26FF}\u{2700}-\u{27BF}\u{2B50}-\u{2B55}\u{231A}-\u{23F3}\u{23F0}\u{231B}\u{23F1}-\u{23F2}\u{23E9}-\u{23EF}\u{23F4}-\u{23F7}\u{23F8}-\u{23FA}\u{2B06}\u{2194}-\u{21AA}\u{2B05}\u{2195}-\u{21B7}\u{2B07}\u{21A9}])/gu,
+      ""
+    );
   };
 
   const speakText = (text) => {
@@ -108,76 +110,8 @@ const ContextProvider = (props) => {
     handleStopSpeaking,
   };
 
-=======
-  const [input, setInput] = useState("");
-  const [recentPrompt, setRecentPrompt] = useState("");
-  const [prevPrompt, setPrevPrompt] = useState([]);
-  const [showResult, setShowResult] = useState(false);
-  const [loading, setLoading] = useState(false);
-  const [resultData, setResultData] = useState("");
-
-  const delayPara = (index, nextWord) => {
-    setTimeout(function () {
-      setResultData((prev) => prev + nextWord);
-    }, 75 * index);
-  };
-
-  const newChat = () => {
-    setLoading(false);
-    setShowResult(false);
-  };
-  const onSent = async (prompt) => {
-    setResultData("");
-    setLoading(true);
-    setShowResult(true);
-    let Response;
-    if (prompt !== undefined) {
-      Response = await runChat(prompt);
-      setRecentPrompt(prompt);
-    } else {
-      setPrevPrompt((prev) => [...prev, input]);
-      setRecentPrompt(input);
-      Response = await runChat(input);
-    }
-    let responseArray = Response.split("**");
-    let newResponse = "";
-    for (let i = 0; i < responseArray.length; i++) {
-      if (i == 0 || i % 2 != 1) {
-        newResponse += responseArray[i];
-      } else {
-        newResponse += "<b>" + responseArray[i] + "</b>";
-      }
-    }
-    let newResponse2 = newResponse.split("*").join("</br>");
-    let newResponseArray = newResponse2.split(" ");
-    for (let i = 0; i < newResponseArray.length; i++) {
-      const nextWord = newResponseArray[i];
-      delayPara(i, nextWord + " ");
-    }
-    setLoading(false);
-    setInput(" ");
-  };
-
-  const contextValue = {
-    prevPrompt,
-    setPrevPrompt,
-    onSent,
-    setRecentPrompt,
-    recentPrompt,
-    showResult,
-    loading,
-    resultData,
-    input,
-    setInput,
-    newChat,
-  };
->>>>>>> 58cb9c7d139f78e6066a7b1e57b08e479d7897b1
   return (
     <context.Provider value={contextValue}>{props.children}</context.Provider>
   );
 };
-<<<<<<< HEAD
-
-=======
->>>>>>> 58cb9c7d139f78e6066a7b1e57b08e479d7897b1
 export default ContextProvider;
