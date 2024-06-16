@@ -115,7 +115,6 @@ export async function runChat(prompt) {
             },
           ],
         },
-
         {
           role: "user",
           parts: [{ text: "Help save my money" }],
