@@ -7,6 +7,7 @@
  * https://ai.google.dev/gemini-api/docs/get-started/node
  */
 
+//Updating changes
 const {
   GoogleGenerativeAI,
   HarmCategory,
