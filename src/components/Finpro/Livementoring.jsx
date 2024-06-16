@@ -1,104 +1,78 @@
-import React, { useState } from 'react';
-import {
-  Typography,
-  Select,
-  MenuItem,
-  FormControl,
-  InputLabel,
-  Box,
-  ToggleButton,
-  ToggleButtonGroup,
-  Grid,
-  TextField,
-} from '@mui/material';
+import React, { useState } from "react";
 
-const Livementoring = () => {
-  const [experience, setExperience] = useState('beginner');
-  const [profession, setProfession] = useState('fresher');
-  const [priceRange, setPriceRange] = useState('');
-
-  const handleExperienceChange = (event) => {
-    setExperience(event.target.value);
-  };
-
-  const handleProfessionChange = (event, newProfession) => {
-    if (newProfession !== null) {
-      setProfession(newProfession);
-    }
-  };
-
-  const handleSearch = () => {
-    // Implement search logic based on selected filters
-    console.log('Search clicked:', experience, profession, priceRange);
-    // Replace with actual search functionality
-  };
+const MentorCard = ({
+  videoUrl,
+  name,
+  workExperience,
+  menteesCount,
+  description,
+  about,
+  expertise,
+  mentorshipDetails,
+}) => {
+  const [showDetails, setShowDetails] = useState(false);
 
   return (
-    <Box mt={4} p={2} textAlign="center">
-      <Typography variant="h4" gutterBottom style={{ fontWeight: 'bold', marginBottom: '20px' }}>
-        Find My Mentor
-      </Typography>
-
-      <Grid container spacing={2} alignItems="center" justifyContent="center">
-        <Grid item xs={12} sm={4}>
-          <Typography variant="h6" gutterBottom align="left">
-            Experience Level
-          </Typography>
-          <FormControl fullWidth variant="outlined">
-            <InputLabel id="experience-label">Select Experience Level</InputLabel>
-            <Select
-              labelId="experience-label"
-              value={experience}
-              onChange={handleExperienceChange}
-              label="Select Experience Level"
-            >
-              <MenuItem value="beginner">Beginner</MenuItem>
-              <MenuItem value="intermediate">Intermediate</MenuItem>
-              <MenuItem value="advanced">Advanced</MenuItem>
-            </Select>
-          </FormControl>
-        </Grid>
-
-        <Grid item xs={12} sm={4}>
-          <Typography variant="h6" gutterBottom align="left">
-            Profession
-          </Typography>
-          <ToggleButtonGroup
-            value={profession}
-            exclusive
-            onChange={handleProfessionChange}
-            aria-label="Profession"
-          >
-            <ToggleButton value="fresher">Fresher</ToggleButton>
-            <ToggleButton value="professional">Professional</ToggleButton>
-          </ToggleButtonGroup>
-        </Grid>
-
-        <Grid item xs={12} sm={4}>
-          <Typography variant="h6" gutterBottom align="left">
-            Price Range
-          </Typography>
-          <TextField
-            fullWidth
-            id="price-range"
-            label="Enter Price Range"
-            variant="outlined"
-            value={priceRange}
-            onChange={(e) => setPriceRange(e.target.value)}
-          />
-        </Grid>
-
-        <Grid item xs={12}>
+    <div className="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col md:flex-row w-full max-w-4xl">
+      <div className="md:w-1/2">
+        <iframe
+          src={videoUrl}
+          allow="autoplay"
+          title="Mentor Video"
+          className="w-full h-80 md:h-auto"
+        ></iframe>
+      </div>
+      <div className="p-6 md:w-1/2">
+        <div>
+          <h2 className="text-2xl font-bold mb-4">{name}</h2>
           <button
-            onClick={handleSearch}
-            type="button"
-            className="text-white bg-purple-700 hover:bg-purple-800 focus:outline-none focus:ring-4 focus:ring-purple-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mb-2 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900"
+            onClick={() => setShowDetails(!showDetails)}
+            className="text-blue-500 mb-4 cursor-pointer"
           >
-            Search
+            {showDetails ? "Hide Details" : "Show Details"}
           </button>
-        </Grid>
-      </Grid>
-    </Box>
+          {showDetails && (
+            <>
+              <p className="text-gray-700 mb-4">{about}</p>
+              <p className="text-gray-700 mb-4">{workExperience}</p>
+              <p className="text-gray-700 mb-4">{menteesCount}</p>
+              <p className="text-gray-700 mb-4">{expertise}</p>
+              <p className="text-gray-700 mb-4">{mentorshipDetails}</p>
+            </>
+          )}
+        </div>
+        {showDetails && (
+          <div className="mt-4">
+            <button className="bg-blue-500 text-white font-semibold py-2 px-4 rounded hover:bg-blue-600">
+              BOOK 1:1 Mentorship (30 mins)
+              <br />
+              Rs. 1500
+            </button>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+};
+
+const Livementoring = () => {
+  return (
+    <div className="min-h-screen bg-gray-100 p-8">
+      <h1 className="text-3xl font-bold text-center mb-12">Live Mentors</h1>
+      <div className="flex flex-wrap justify-center gap-8">
+        <MentorCard
+          videoUrl="https://drive.google.com/file/d/1r5LuoGiK2fj-Zem3e0MxA8gW8vxvp_rC/preview"
+          name="Mayank Gupta"
+          workExperience="Worked in KPMG from 2019-2022. Currently at MAX Corporation."
+          menteesCount="Mentored 50+ people"
+          description=""
+          about="I am a Chartered Accountant with extensive experience and qualifications in finance. I've helped many individuals and businesses achieve their financial goals, and I'm excited to be your mentor. Let's make finance easy together."
+          expertise="Expertise in accounting and financial reporting, taxation, risk management, business strategy and management, career development, and personal finance."
+          mentorshipDetails="I offer personalized 1:1 mentorship sessions for 30 minutes at Rs. 1500. Click 'BOOK NOW!' to schedule a session."
+        />
+        {/* Add more <MentorCard /> components as needed */}
+      </div>
+    </div>
   );
 };
 

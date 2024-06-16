@@ -30,14 +30,14 @@ import PennyPlanner from "./components/PennyPlanner/PennyPlanner";
 import InflationCalculator from "./components/InflationCalculator/InflationCalculator";
 import Retirement from "./components/Retirement/Retirement";
 import Forum from "./components/forum/Forum.tsx";
-import Finpro from './components/Finpro/finpro.jsx';
-import Hungman from './components/hungman/hungman.jsx';
-import LiveMentoring from './components/Finpro/Livementoring';
+import Finpro from "./components/Finpro/finpro.jsx";
+import Hungman from "./components/hungman/hungman.jsx";
+import LiveMentoring from "./components/Finpro/Livementoring";
 import Goodies from "./components/Finpro/Goodies.jsx";
 import Premiumcourses from "./components/Finpro/Premiumcourses.jsx";
 import FinancialFortune from "./components/FinancialFortune/Home.jsx";
 import Financialresult from "./components/FinancialFortune/Result.jsx";
-
+import IntroSaving from "./components/JuniorArticles/IntroSaving.jsx";
 
 function App() {
   return (
@@ -65,7 +65,7 @@ function App() {
           />
           <Route path="/news" element={<ProtectedRoute element={News} />} />
           <Route path="/forum" element={<ProtectedRoute element={Forum} />} />
-          
+
           <Route
             path="/budgeting"
             element={<ProtectedRoute element={Budget} />}
@@ -91,8 +91,8 @@ function App() {
             path="/tracker"
             element={<ProtectedRoute element={Tracker} />}
           />
-            <Route path="/financialhome" element={<FinancialFortune />} />
-            <Route path="/result" element={<Financialresult />} />
+          <Route path="/financialhome" element={<FinancialFortune />} />
+          <Route path="/result" element={<Financialresult />} />
           <Route
             path="/retirement-calculator"
             element={<ProtectedRoute element={Retirement} />}
@@ -118,7 +118,7 @@ function App() {
             path="/Finpro"
             element={<ProtectedRoute element={Finpro} />} // Add the Finpro route here
           />
-           
+
           <Route
             path="/livementoring"
             element={<ProtectedRoute element={LiveMentoring} />}
@@ -127,9 +127,13 @@ function App() {
             path="/premiumcourses"
             element={<ProtectedRoute element={Premiumcourses} />}
           />
-           <Route
+          <Route
             path="/goodies"
             element={<ProtectedRoute element={Goodies} />}
+          />
+          <Route
+            path="/introduction-to-saving"
+            element={<ProtectedRoute element={IntroSaving} />}
           />
           <Route
             path="/bot"
@@ -141,7 +145,6 @@ function App() {
                   </ContextProvider>
                 )}
               />
-              
             }
           />
           <Route
@@ -154,20 +157,18 @@ function App() {
                   </ContextProvider>
                 )}
               />
-
             }
           />
-           <Route
+          <Route
             path="/play-stroop"
             element={
               <ProtectedRoute
                 element={() => (
                   <ContextProvider>
-                    <FinancialFortune/>
+                    <FinancialFortune />
                   </ContextProvider>
                 )}
               />
-
             }
           />
           <Route
@@ -180,7 +181,6 @@ function App() {
                   </ContextProvider>
                 )}
               />
-
             }
           />
         </Routes>

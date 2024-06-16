@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheckCircle, faAngleDown } from "@fortawesome/free-solid-svg-icons";
 import Header from "../Header/header";
+import FinHeader from "./FinHeader";
 
 const Premiumcourses = () => {
   // State to manage toggle for each section
@@ -21,7 +22,7 @@ const Premiumcourses = () => {
 
   return (
     <div className="bg-gray-100 min-h-screen">
-      <Header />
+      <FinHeader />
       <div className="max-w-6xl mx-auto px-4 py-8">
         {/* Page Heading */}
         <h1 className="text-4xl font-bold text-center mb-8 text-gray-900 overflow-hidden">
