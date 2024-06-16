@@ -39,6 +39,7 @@ import Premiumcourses from "./components/Finpro/Premiumcourses.jsx";
 import FinancialFortune from "./components/FinancialFortune/Home.jsx";
 import Financialresult from "./components/FinancialFortune/Result.jsx";
 import IntroSaving from "./components/JuniorArticles/IntroSaving.jsx";
+import Booking from "./components/Finpro/Booking.jsx";
 
 function App() {
   return (
@@ -80,6 +81,10 @@ function App() {
           <Route
             path="/calculate"
             element={<ProtectedRoute element={FinanceCalculator} />}
+          />
+          <Route
+            path="/booking"
+            element={<ProtectedRoute element={Booking} />}
           />
           <Route
             path="/compound-interest"

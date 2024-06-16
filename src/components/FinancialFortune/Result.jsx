@@ -24,7 +24,7 @@ function Result() {
 
   return (
     <div className="result-page">
-      <h1 className="result-heading">Stroop Test Results</h1>
+      <h1 className="result-heading">Finance fortune Results</h1>
       <div className="score-section">
         <h2>Your Score: {score}/10</h2>
         <p className='interpretation'>{getInterpretation()}</p>

@@ -25,7 +25,7 @@ function StroopTest() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (start) {
+    if (start && round <= 6) {
       startRound();
     }
   }, [round, start]);
@@ -34,6 +34,7 @@ function StroopTest() {
     setStart(true);
     setRound(1);
     setScore(0);
+    setShowInstructions(false);
   };
 
   const startRound = () => {
@@ -45,8 +46,10 @@ function StroopTest() {
     if (country === currentCurrency.country) {
       setScore(score + 1);
     }
-    if (round < 8) {
+    if (round < 6) {
       setRound(round + 1);
+    } else {
+      setRound(7); // Round 7 is for displaying final score and buttons
     }
   };
 
@@ -65,7 +68,7 @@ function StroopTest() {
               <li>
                 Select the correct country for the displayed currency symbol.
               </li>
-              <li>There will be 8 rounds. Try to score as high as possible.</li>
+              <li>There will be 6 rounds. Try to score as high as possible.</li>
             </ul>
             <button
               className="high"
@@ -79,23 +82,26 @@ function StroopTest() {
           </div>
         ) : start ? (
           <div className="test-div">
-            <h1 className="head">Stroop Test</h1>
-            <h2>Round {round}/8</h2>
-            <div className="current">{currentCurrency.symbol}</div>
-            <div className="btns">
-              {currencies.map((currency, index) => (
-                <button
-                  className="next"
-                  key={index}
-                  onClick={() => handleOptionClick(currency.country)}
-                >
-                  {currency.country}
-                </button>
-              ))}
-            </div>
-            {round === 8 && (
+            {round <= 6 ? (
+              <>
+                <h1 className="head">Guess the Country</h1>
+                <h2>Round {round}/6</h2>
+                <div className="current">{currentCurrency.symbol}</div>
+                <div className="btns">
+                  {currencies.map((currency, index) => (
+                    <button
+                      className="next"
+                      key={index}
+                      onClick={() => handleOptionClick(currency.country)}
+                    >
+                      {currency.country}
+                    </button>
+                  ))}
+                </div>
+              </>
+            ) : (
               <div className="btn-test">
-                <h2>Final Score: {score}/8</h2>
+                <h2>Final Score: {score}/6</h2>
                 <div>
                   <button className="start" onClick={startOver}>
                     Start Over
