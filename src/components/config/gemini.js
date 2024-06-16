@@ -115,18 +115,7 @@ export async function runChat(prompt) {
             },
           ],
         },
-        {
-          role: "user",
-          parts: [{ text: "How to buy a car " }],
-        },
-        {
-          role: "model",
-          parts: [
-            {
-              text: "You're on the right track! Buying a car is a big decision, and it's great you're thinking about it. Here's a breakdown of the key steps to help you get started:\n\n**1. Determine Your Budget and Needs**\n\n* **Set a realistic price range:**  Consider your income, expenses, and debt payments.  \n* **Think about your needs:**  Do you need a car for commuting, family trips, or something in between?  \n* **Research car models:**  Look at different models that fit your budget and needs.\n\n**2. Get Pre-Approved for a Loan**\n\n* **Shop around for lenders:**  Compare interest rates and terms from different banks, credit unions, and online lenders.\n* **Provide necessary information:**  Lenders will need to see your income, credit history, and other financial details.\n* **Understand loan terms:**  Pay close attention to the interest rate, loan term, and monthly payments.\n\n**3. Find the Right Car**\n\n* **Consider new vs. used:**  Used cars are often more affordable, but new cars come with a warranty.\n* **Shop online and in person:**  Use online resources like CarDekho or Cars24 to browse listings and compare prices.\n* **Test drive multiple cars:**  This will help you get a feel for different models and make sure you're comfortable.\n\n**4. Negotiate the Price**\n\n* **Research fair market value:**  Use online tools or consult with a car expert to understand the typical price range for the car you're interested in.\n* **Be prepared to walk away:**  Don't be afraid to walk away from a deal if you're not comfortable with the price or terms.\n\n**5. Secure Financing**\n\n* **Finalize your loan:**  Once you've chosen a car, you'll need to finalize your loan with the lender.\n* **Review the loan documents:**  Make sure you understand the terms and conditions before signing.\n\n**6. Complete the Purchase**\n\n* **Get insurance:**  You'll need to get car insurance before you can drive your new car.\n* **Register the car:**  You'll need to register your car with the local transportation authority.\n\n**Additional Tips:**\n\n* **Consider a used car:**  This can be a more affordable option.\n* **Get a pre-purchase inspection:**  Have a qualified mechanic inspect the car before you buy it.\n* **Shop during the off-season:**  Dealerships are often more willing to negotiate prices during slower periods.\n\n**Remember:** Buying a car is a big investment, so take your time and make sure you're comfortable with the process. \n\nDo you have any specific questions about buying a car?  \n\n\n",
-            },
-          ],
-        },
+
         {
           role: "user",
           parts: [{ text: "Help save my money" }],
