@@ -213,10 +213,3 @@ export async function runChat(prompt) {
     throw error;
   }
 }
-<<<<<<< HEAD
-=======
-  catch (error) {
-  console.error("Error in runChat:", error);
-  throw error;}
-}
->>>>>>> 73763396fb9b52639527c4672e16ab73443366ee
