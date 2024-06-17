@@ -30,10 +30,12 @@ const Finpro = () => {
         }}
       >
         <Typography
-          variant="h4"
+          variant="h3"
           gutterBottom
           style={{
             fontWeight: "bold",
+            color: "	#003c66",
+
             marginBottom: "40px",
             textAlign: "center",
           }}

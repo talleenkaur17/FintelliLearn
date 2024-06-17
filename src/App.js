@@ -39,9 +39,14 @@ import FinancialFortune from "./components/FinancialFortune/Home.jsx";
 import Financialresult from "./components/FinancialFortune/Result.jsx";
 import IntroSaving from "./components/JuniorArticles/IntroSaving.jsx";
 import Booking from "./components/Finpro/Booking.jsx";
+<<<<<<< HEAD
 import Retire from "./components/Retireease/Retire.jsx";
 import Course1 from "./components/Retireease/Course1.jsx";
 import Course2 from "./components/Retireease/Course2.jsx";
+=======
+import OpeningSaving from "./components/OpeningSaving/OpeningSaving.jsx";
+import differentsaving from "./components/DifferentSaving/Differentsaving.jsx";
+>>>>>>> 38218f11fd8fc1aade23ef916073a7c6c4fc922f
 
 function App() {
   return (
@@ -134,9 +139,19 @@ function App() {
             path="/Finpro"
             element={<ProtectedRoute element={Finpro} />} // Add the Finpro route here
           />
+<<<<<<< HEAD
            <Route
             path="/retirement"
             element={<ProtectedRoute element={Retire} />} // Add the Finpro route here
+=======
+          <Route
+            path="/open-saving"
+            element={<ProtectedRoute element={OpeningSaving} />} // Add the Finpro route here
+          />
+          <Route
+            path="/different-saving"
+            element={<ProtectedRoute element={differentsaving} />} // Add the Finpro route here
+>>>>>>> 38218f11fd8fc1aade23ef916073a7c6c4fc922f
           />
 
           <Route

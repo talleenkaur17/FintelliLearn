@@ -1,6 +1,6 @@
 import React from "react";
 import { Card, CardContent, Typography, Box } from "@mui/material";
-import AttachMoneyIcon from "@mui/icons-material/AttachMoney";
+import CurrencyRupeeIcon from "@mui/icons-material/CurrencyRupee";
 
 const Budget = ({ budget }) => {
   return (
@@ -10,13 +10,13 @@ const Budget = ({ budget }) => {
     >
       <CardContent>
         <Box display="flex" alignItems="center">
-          <AttachMoneyIcon fontSize="large" style={{ color: "#00796b" }} />
+          <CurrencyRupeeIcon fontSize="large" style={{ color: "#00796b" }} />
           <Typography
             variant="h5"
             component="div"
             style={{ marginLeft: "8px" }}
           >
-            Current Budget: ${budget}
+            Current Budget: ₹{budget}
           </Typography>
         </Box>
       </CardContent>

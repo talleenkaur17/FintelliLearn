@@ -40,7 +40,7 @@ const News = () => {
     <div>
       <Header />
       <div className="container mx-auto px-4 bg-teal-50 py-8 min-h-screen overflow-auto">
-        <h1 className="text-4xl font-bold mb-4 px-10 text-center overflow-hidden text-blue-800 font-serif">
+        <h1 className="text-4xl font-bold mb-4 px-10 text-center overflow-hidden text-blue-800">
           Trending News
         </h1>
 
