@@ -10,6 +10,8 @@ function StroopTest() {
     { symbol: "€", name: "EUR", country: "European Union" },
     { symbol: "¥", name: "JPY", country: "Japan" },
     { symbol: "₹", name: "INR", country: "India" },
+    { symbol: "£", name: "GBP", country: "United Kingdom" },
+    { symbol: "₩", name: "KRW", country: "South Korea" },
   ];
 
   const [round, setRound] = useState(1);
@@ -25,7 +27,7 @@ function StroopTest() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (start && round <= 6) {
+    if (start && round <= 8) {
       startRound();
     }
   }, [round, start]);
@@ -46,10 +48,10 @@ function StroopTest() {
     if (country === currentCurrency.country) {
       setScore(score + 1);
     }
-    if (round < 6) {
+    if (round < 8) {
       setRound(round + 1);
     } else {
-      setRound(7); // Round 7 is for displaying final score and buttons
+      setRound(9); // Round 9 is for displaying final score and buttons
     }
   };
 
@@ -82,10 +84,10 @@ function StroopTest() {
           </div>
         ) : start ? (
           <div className="test-div">
-            {round <= 6 ? (
+            {round <= 8 ? (
               <>
                 <h1 className="head">Guess the Country</h1>
-                <h2>Round {round}/6</h2>
+                <h2>Round {round}/8</h2>
                 <div className="current">{currentCurrency.symbol}</div>
                 <div className="btns">
                   {currencies.map((currency, index) => (
@@ -101,7 +103,7 @@ function StroopTest() {
               </>
             ) : (
               <div className="btn-test">
-                <h2>Final Score: {score}/6</h2>
+                <h2>Final Score: {score}/8</h2>
                 <div>
                   <button className="start" onClick={startOver}>
                     Start Over

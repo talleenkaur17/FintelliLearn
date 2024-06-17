@@ -7,17 +7,17 @@
 .instructions {
   text-align: center;
   font-size: 1.2em;
-  padding: 20px;
+  padding: 10px 20px; /* Reduced padding */
   background-color: #f0f8ff; /* Light blue background */
   border: 2px solid #ccc;
   border-radius: 10px;
-  margin: 50px auto;
-  max-width: 400px;
+  margin: 20px auto; /* Reduced margin to bring it closer */
+  max-width: 400px; /* Maintain width */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .instructions h1 {
-  font-size: 2em;
+  font-size: 1.8em; /* Slightly smaller font size */
   margin-bottom: 10px;
   color: #4b0082; /* Purple color */
 }
@@ -25,30 +25,30 @@
 .instructions ul {
   text-align: left;
   list-style-type: disc;
-  margin: 20px auto;
+  margin: 10px auto; /* Reduced margin */
   padding: 0;
   max-width: 350px;
   color: #333;
 }
 
 .instructions ul li {
-  margin-bottom: 10px;
+  margin-bottom: 5px; /* Reduced margin-bottom to decrease height */
 }
 
 .instructions .high {
-  font-size: 1.2em;
+  font-size: 1em; /* Smaller font size */
   font-weight: bold;
-  padding: 10px 20px;
-  background-color: #4b0082; /* Purple */
+  padding: 5px 10px; /* Smaller padding */
+  background-color: #008CBA; /* Blue */
   color: white;
   border: none;
-  border-radius: 5px;
+  border-radius: 3px; /* Smaller border-radius */
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
 .instructions .high:hover {
-  background-color: #6a5acd; /* Lighter shade of purple */
+  background-color: #005f73; /* Darker shade of blue */
 }
 
 .head {
