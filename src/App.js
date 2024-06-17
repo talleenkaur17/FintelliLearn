@@ -39,6 +39,9 @@ import FinancialFortune from "./components/FinancialFortune/Home.jsx";
 import Financialresult from "./components/FinancialFortune/Result.jsx";
 import IntroSaving from "./components/JuniorArticles/IntroSaving.jsx";
 import Booking from "./components/Finpro/Booking.jsx";
+import Retire from "./components/Retireease/Retire.jsx";
+import Course1 from "./components/Retireease/Course1.jsx";
+import Course2 from "./components/Retireease/Course2.jsx";
 
 function App() {
   return (
@@ -64,6 +67,15 @@ function App() {
             path="/seniors"
             element={<ProtectedRoute element={Seniors} />}
           />
+          <Route
+            path="/course1"
+            element={<ProtectedRoute element={Course1} />}
+          />
+             <Route
+            path="/course2"
+            element={<ProtectedRoute element={Course2} />}
+          />
+          
           <Route
             path="/budgeting"
             element={<ProtectedRoute element={Budget} />}
@@ -121,6 +133,10 @@ function App() {
           <Route
             path="/Finpro"
             element={<ProtectedRoute element={Finpro} />} // Add the Finpro route here
+          />
+           <Route
+            path="/retirement"
+            element={<ProtectedRoute element={Retire} />} // Add the Finpro route here
           />
 
           <Route
