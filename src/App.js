@@ -38,11 +38,10 @@ import Premiumcourses from "./components/Finpro/Premiumcourses.jsx";
 import FinancialFortune from "./components/FinancialFortune/Home.jsx";
 import Financialresult from "./components/FinancialFortune/Result.jsx";
 import IntroSaving from "./components/JuniorArticles/IntroSaving.jsx";
-<<<<<<< HEAD
 import Booking from "./components/Finpro/Booking.jsx";
+import OpeningSaving from "./components/OpeningSaving/OpeningSaving.jsx";
+import differentsaving from "./components/DifferentSaving/Differentsaving.jsx";
 
-=======
->>>>>>> f7b3ae9715851edecc22a48e76bee6161cd92a42
 function App() {
   return (
     <AuthProvider>
@@ -124,6 +123,14 @@ function App() {
           <Route
             path="/Finpro"
             element={<ProtectedRoute element={Finpro} />} // Add the Finpro route here
+          />
+          <Route
+            path="/open-saving"
+            element={<ProtectedRoute element={OpeningSaving} />} // Add the Finpro route here
+          />
+          <Route
+            path="/different-saving"
+            element={<ProtectedRoute element={differentsaving} />} // Add the Finpro route here
           />
 
           <Route

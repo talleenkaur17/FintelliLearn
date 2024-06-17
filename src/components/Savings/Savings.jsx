@@ -99,7 +99,7 @@ const Savings = () => {
 
     // Add more topics with their respective video URLs and thumbnail images MEDIUM
     "Opening a Savings Account": {
-      article: "/introduction-to-saving",
+      article: "/open-saving",
       video: "https://youtu.be/JqYoLQXO7j4?si=SghlmZpNNGKSW7zB",
       thumbnail:
         "https://www.axisbank.com/images/default-source/progress-with-us_new/features-to-look-for-when-opening-a-digital-savings-account.jpg?sfvrsn=809f1856_2",
@@ -123,7 +123,7 @@ const Savings = () => {
     },
     //HARD
     "Exploring Different Types of Savings Accounts": {
-      article: "/introduction-to-saving",
+      article: "/different-saving",
       video: "https://youtu.be/JqYoLQXO7j4?si=SghlmZpNNGKSW7zB",
       thumbnail:
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRaEEiiIdRuCl8MstXTA3GqdbPGCkg8ByQSpA&s",
@@ -189,7 +189,7 @@ const Savings = () => {
         SAVINGS
       </h2>
       <div className="border border-gray-300 p-4 rounded-lg">
-        <p className="pt-4 text-blue-500 text-xl font-bold italic text-center font-mono">
+        <p className="pt-4 text-blue-500 text-xl font-bold italic text-center ">
           FinShaala's Savings Adventure: Let's Journey into Financial Wisdom!
         </p>
       </div>
@@ -213,7 +213,7 @@ const Savings = () => {
                 : "bg-gray-200 text-gray-800"
             } px-4 py-2 rounded`}
           >
-            Easy
+            Beginner
           </button>
           <button
             onClick={() => setDifficultyLevel("medium")}
@@ -223,7 +223,7 @@ const Savings = () => {
                 : "bg-gray-200 text-gray-800"
             } px-4 py-2 rounded`}
           >
-            Medium
+            Intermediate
           </button>
           <button
             onClick={() => setDifficultyLevel("hard")}
@@ -233,7 +233,7 @@ const Savings = () => {
                 : "bg-gray-200 text-gray-800"
             } px-4 py-2 rounded`}
           >
-            Hard
+            Advanced
           </button>
         </div>
         <table className="w-full mx-auto border-collapse border border-gray-200">
@@ -256,7 +256,7 @@ const Savings = () => {
           <tbody>
             {filteredTopics().map((topic) => (
               <tr key={topic}>
-                <td className="font-bold font-mono px-2 py-1 border border-gray-200">
+                <td className="font-bold  px-2 py-1 border border-gray-200">
                   {topic}
                 </td>
                 <td className="px-2 py-1 border border-gray-200">

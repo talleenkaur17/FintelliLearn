@@ -7,7 +7,7 @@ const FinanceCalculator = () => {
     <div className="bg-gray-100 min-h-screen overflow-hidden scrollbar-hidden">
       <Header />
       <div className="container mx-auto px-4 py-12 overflow-hidden">
-        <h1 className="text-4xl font-bold text-purple-900 text-center mb-8 overflow-hidden font-serif">
+        <h1 className="text-4xl font-bold text-purple-900 text-center mb-8 overflow-hidden ">
           Finance Calculator: Your Gateway to Smarter Financial Decisions!
         </h1>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

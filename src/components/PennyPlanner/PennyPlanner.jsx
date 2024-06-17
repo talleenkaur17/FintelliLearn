@@ -14,33 +14,33 @@ import Scenario from "./Scenario";
 import Header from "../Header/header";
 
 const additionalScenarios = [
-  { text: "Buy concert tickets for $100", cost: 100, icon: "🎤" },
-  { text: "Renew gym membership for $50", cost: 50, icon: "💪" },
-  { text: "Receive a refund of $75", cost: -75, icon: "💸" },
-  { text: "Go on a weekend getaway for $300", cost: 300, icon: "✈️" },
-  { text: "Donate $20 to charity", cost: 20, icon: "❤️" },
-  { text: "Pay off credit card debt of $200", cost: 200, icon: "💳" },
-  { text: "Buy new clothes for $80", cost: 80, icon: "👗" },
-  { text: "Take a taxi for $30", cost: 30, icon: "🚕" },
-  { text: "Receive a salary bonus of $500", cost: -500, icon: "🎉" },
-  { text: "Purchase a new laptop for $1000", cost: 1000, icon: "💻" },
-  { text: "Pay for a subscription service of $15/month", cost: 15, icon: "📱" },
-  { text: "Buy gifts for $50", cost: 50, icon: "🎁" },
-  { text: "Save $50 in a piggy bank", cost: -50, icon: "🐷" },
+  { text: "Buy concert tickets for ₹100", cost: 100, icon: "🎤" },
+  { text: "Renew gym membership for ₹50", cost: 50, icon: "💪" },
+  { text: "Receive a refund of ₹75", cost: -75, icon: "💸" },
+  { text: "Go on a weekend getaway for ₹300", cost: 300, icon: "✈️" },
+  { text: "Donate ₹20 to charity", cost: 20, icon: "❤️" },
+  { text: "Pay off credit card debt of ₹200", cost: 200, icon: "💳" },
+  { text: "Buy new clothes for ₹80", cost: 80, icon: "👗" },
+  { text: "Take a taxi for ₹30", cost: 30, icon: "🚕" },
+  { text: "Receive a salary bonus of ₹500", cost: -500, icon: "🎉" },
+  { text: "Purchase a new laptop for ₹1000", cost: 1000, icon: "💻" },
+  { text: "Pay for a subscription service of ₹15/month", cost: 15, icon: "📱" },
+  { text: "Buy gifts for ₹50", cost: 50, icon: "🎁" },
+  { text: "Save ₹50 in a piggy bank", cost: -50, icon: "🐷" },
 ];
 
 const scenarios = [
-  { text: "Buy a new phone for $500", cost: 500, icon: "📱" },
-  { text: "Save $200", cost: -200, icon: "💰" },
-  { text: "Unexpected car repair for $300", cost: 300, icon: "🚗" },
-  { text: "Receive a bonus of $150", cost: -150, icon: "🎁" },
-  { text: "Invest $100 in stocks", cost: 100, gain: 150, icon: "📈" },
-  { text: "Dinner with friends for $50", cost: 50, icon: "🍽️" },
-  { text: "Rent payment of $700", cost: 700, icon: "🏠" },
-  { text: "Grocery shopping for $100", cost: 100, icon: "🛒" },
-  { text: "Sell old furniture for $200", cost: -200, icon: "🛋️" },
-  { text: "Utility bills for $150", cost: 150, icon: "💡" },
-  { text: "Monthly subscription service for $30", cost: 30, icon: "📺" },
+  { text: "Buy a new phone for ₹500", cost: 500, icon: "📱" },
+  { text: "Save ₹200", cost: -200, icon: "💰" },
+  { text: "Unexpected car repair for ₹300", cost: 300, icon: "🚗" },
+  { text: "Receive a bonus of ₹150", cost: -150, icon: "🎁" },
+  { text: "Invest ₹100 in stocks", cost: 100, gain: 150, icon: "📈" },
+  { text: "Dinner with friends for ₹50", cost: 50, icon: "🍽️" },
+  { text: "Rent payment of ₹700", cost: 700, icon: "🏠" },
+  { text: "Grocery shopping for ₹100", cost: 100, icon: "🛒" },
+  { text: "Sell old furniture for ₹200", cost: -200, icon: "🛋️" },
+  { text: "Utility bills for ₹150", cost: 150, icon: "💡" },
+  { text: "Monthly subscription service for ₹30", cost: 30, icon: "📺" },
   ...additionalScenarios,
 ];
 
@@ -110,6 +110,7 @@ const PennyPlanner = () => {
     setGameOver(false);
     setDecisions([]);
   };
+
   return (
     <div>
       <Header />

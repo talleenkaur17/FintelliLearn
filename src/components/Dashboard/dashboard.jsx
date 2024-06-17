@@ -29,7 +29,7 @@ function Dashboard() {
     <div className="flex h-screen bg-teal-50 ">
       <div className="w-1/4 bg-blue-800 text-white flex flex-col">
         <div className="p-6 border-b border-blue-700 overflow-hidden">
-          <h2 className="text-3xl font-bold mb-4 font-sans overflow-hidden">
+          <h2 className="text-3xl font-bold mb-4  overflow-hidden">
             FinShaala
           </h2>
         </div>
@@ -128,7 +128,7 @@ function Dashboard() {
         </div>
       </div>
       <div className="w-3/4 p-10">
-        <h2 className="text-3xl text-blue-800 font-bold mb-8 text-center font-serif">
+        <h2 className="text-4xl text-blue-800 font-bold mb-8 text-center ">
           Empower Your Learning Journey with FinShaala
         </h2>
         <div className="flex justify-between space-x-8">
@@ -139,7 +139,7 @@ function Dashboard() {
                 alt="Junior Scholars"
                 className="w-full h-48 object-cover mb-4 rounded-lg"
               />
-              <h3 className="text-2xl font-bold mb-4 font-mono">
+              <h3 className="text-2xl font-bold mb-4 ">
                 Junior Scholars
                 <br /> (Age 12-18)
               </h3>
@@ -155,7 +155,7 @@ function Dashboard() {
                 alt="Financial Mastery Zone"
                 className="w-full h-48 object-cover mb-4 rounded-lg"
               />
-              <h3 className="text-2xl font-bold mb-4 font-mono">
+              <h3 className="text-2xl font-bold mb-4 ">
                 Financial Mastery Zone (Age 18-60)
               </h3>
               <p className="font-semibold">
@@ -170,7 +170,7 @@ function Dashboard() {
                 alt="Retirement Plans"
                 className="w-full h-48 object-cover mb-4 rounded-lg"
               />
-              <h3 className="text-2xl font-bold mb-4 font-mono">
+              <h3 className="text-2xl font-bold mb-4 ">
                 Retire Ease
                 <br /> Age(60+)
               </h3>

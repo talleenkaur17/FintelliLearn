@@ -259,6 +259,10 @@ const Profile = () => {
                 {userData.dob || "Not provided"}
               </div>
               <div className="profile-item">
+                <strong className="font-bold text-xl">FinshaalaId</strong>{" "}
+                {userData.finshaalaId || "Not provided"}
+              </div>
+              <div className="profile-item">
                 <strong className="font-bold text-xl">Total Score:</strong>{" "}
                 {totalScore}
               </div>

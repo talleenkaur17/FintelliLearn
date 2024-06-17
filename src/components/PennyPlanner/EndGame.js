@@ -33,7 +33,7 @@ const EndGame = ({
                 Your final budget:
               </Typography>
               <Typography variant="h5" component="div" align="center">
-                ${budget}
+                ₹{budget}
               </Typography>
             </Grid>
             <Grid item xs={12} sm={6}>
@@ -41,7 +41,7 @@ const EndGame = ({
                 Best possible budget:
               </Typography>
               <Typography variant="h5" component="div" align="center">
-                ${bestBudget}
+                ₹{bestBudget}
               </Typography>
             </Grid>
           </Grid>
