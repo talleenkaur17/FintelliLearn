@@ -5,6 +5,7 @@ import Header from '../Header/header';
 const Retire = () => {
   const navigate = useNavigate();
   const [recognition, setRecognition] = useState(null);
+  const [buttonText, setButtonText] = useState('Start Voice Recognition');
 
   useEffect(() => {
     if ('webkitSpeechRecognition' in window) {
@@ -17,10 +18,10 @@ const Retire = () => {
         const transcript = event.results[event.resultIndex][0].transcript.trim().toLowerCase();
         console.log('Voice input:', transcript);
 
-        if (transcript === 'take me to course 1') {
+        if (transcript === 'take me to first module') {
           speechRecognition.stop();
           navigate('/course1');
-        } else if (transcript === 'take me to course 2') {
+        } else if (transcript === 'take me to second module') {
           speechRecognition.stop();
           navigate('/course2');
         } else if (transcript === 'go to course 1') {
@@ -43,6 +44,15 @@ const Retire = () => {
           navigate('/course2');
         }
       };
+
+      speechRecognition.onstart = () => {
+        setButtonText('Listening...');
+      };
+
+      speechRecognition.onend = () => {
+        setButtonText('Start Voice Recognition');
+      };
+
       speechRecognition.onerror = (event) => {
         console.error('Speech recognition error', event);
       };
@@ -61,21 +71,40 @@ const Retire = () => {
     }
   };
 
+  const speakPageSummary = () => {
+    const summaryText = `
+      Welcome to the Courses page of Finshala! Here, you can explore the exciting courses we offer.
+      Currently, we have two fantastic courses: Understanding Annuity and Health Care Planning.
+      Dive into these courses by clicking on their respective links.
+      You can also use voice commands to navigate—just say 'take me to first module ' or 'take me to second module'.
+    `;
+
+    const speech = new SpeechSynthesisUtterance(summaryText);
+    speech.lang = 'en-US';
+    window.speechSynthesis.speak(speech);
+  };
+
   return (
     <div className="min-h-screen bg-gray-100">
       <Header />
       <div className="container mx-auto px-4 py-8">
         <h1 className="text-3xl font-bold mb-4 text-center text-blue-600">Courses</h1>
         <p className="text-gray-700 mb-6 text-center">
-          INSTRUCTION: We can help you navigate from our courses through your voice!
-          I hope that we can help you and make your experience at FINSHALA great!!!
+          INSTRUCTION: We can help you navigate through our courses using your voice!
+          We hope that we can help you and make your experience at Finshala fantastic!
         </p>
-        <div className="flex justify-center mb-6">
+        <div className="flex justify-center mb-6 space-x-4">
           <button
             onClick={startListening}
             className="bg-blue-500 text-white px-4 py-2 rounded-full shadow-md focus:outline-none hover:bg-blue-600 transition duration-300"
           >
-            Start Voice Recognition
+            {buttonText}
+          </button>
+          <button
+            onClick={speakPageSummary}
+            className="bg-green-500 text-white px-4 py-2 rounded-full shadow-md focus:outline-none hover:bg-green-600 transition duration-300"
+          >
+            Explain Page
           </button>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -92,8 +121,7 @@ const Retire = () => {
         </div>
         <div className="mt-8 bg-white rounded-lg shadow-md p-4">
           <p className="text-gray-700 mb-2">
-            Are you having an issue filing an ITR? Join with Finshala and we will
-            assist you to our best.
+            Are you having an issue filing an ITR? Join Finshala and we'll assist you to the best of our abilities.
           </p>
           <div className="flex justify-end">
             <button className="bg-blue-500 text-white px-4 py-2 rounded-full shadow-md focus:outline-none hover:bg-blue-600 transition duration-300">

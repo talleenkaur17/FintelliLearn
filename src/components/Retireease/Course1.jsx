@@ -1,8 +1,77 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Header from '../Header/header';
 
 const Course1 = () => {
+  const navigate = useNavigate();
+  const [recognition, setRecognition] = useState(null);
   const [expandedTopic, setExpandedTopic] = useState(null);
+  const [buttonText, setButtonText] = useState('Start Voice Recognition');
+
+  useEffect(() => {
+    if ('webkitSpeechRecognition' in window) {
+      const speechRecognition = new window.webkitSpeechRecognition();
+      speechRecognition.continuous = true;
+      speechRecognition.interimResults = false;
+      speechRecognition.lang = 'en-US';
+
+      speechRecognition.onresult = (event) => {
+        const transcript = event.results[event.resultIndex][0].transcript.trim().toLowerCase();
+        console.log('Voice input:', transcript);
+
+        if (transcript === 'go back') {
+          speechRecognition.stop();
+          navigate('/retirement');
+        } else if (transcript === 'go back to courses') {
+          speechRecognition.stop();
+          navigate('/retirement');
+        } else if (transcript === 'open home page') {
+          speechRecognition.stop();
+          navigate('/retirement');
+        } else if (transcript === 'take me back to courses') {
+          speechRecognition.stop();
+          navigate('/retirement');
+        }
+      };
+
+      speechRecognition.onstart = () => {
+        setButtonText('Listening...');
+      };
+
+      speechRecognition.onend = () => {
+        setButtonText('Start Voice Recognition');
+      };
+
+      speechRecognition.onerror = (event) => {
+        console.error('Speech recognition error', event);
+      };
+
+      setRecognition(speechRecognition);
+    } else {
+      console.warn('Web Speech API is not supported in this browser.');
+    }
+  }, [navigate]);
+
+  const startListening = () => {
+    if (recognition) {
+      recognition.start();
+    } else {
+      alert('Voice recognition is not supported in this browser.');
+    }
+  };
+
+  const speakPageSummary = () => {
+    const summaryText = `
+      Welcome to the Understanding Annuity course! Here, you can learn about different types of annuities, 
+      annuity payment structures, payout options, and the benefits and drawbacks of annuities.
+      Navigate through the course topics to dive deeper. You can use voice commands to go back to the courses page.
+      We hope you find this course informative and engaging!
+    `;
+
+    const speech = new SpeechSynthesisUtterance(summaryText);
+    speech.lang = 'en-US';
+    window.speechSynthesis.speak(speech);
+  };
 
   const toggleTopic = (topic) => {
     if (expandedTopic === topic) {
@@ -30,9 +99,7 @@ const Course1 = () => {
             </h2>
             {expandedTopic === 'typesOfAnnuity' && (
               <div className="text-gray-700">
-                <p>
-                  There are three main types of annuities:
-                </p>
+                <p>There are three main types of annuities:</p>
                 <ul className="list-disc pl-6 mt-2">
                   <li>
                     <strong>Fixed Annuities:</strong> These provide a guaranteed fixed rate of return, offering stable and predictable income payments. The insurance company assumes the investment risk.
@@ -62,9 +129,7 @@ const Course1 = () => {
             </h2>
             {expandedTopic === 'annuityPaymentStructure' && (
               <div className="text-gray-700">
-                <p>
-                  Annuities can be structured in two main ways based on when the income payments begin:
-                </p>
+                <p>Annuities can be structured in two main ways based on when the income payments begin:</p>
                 <ul className="list-disc pl-6 mt-2">
                   <li>
                     <strong>Immediate Annuities:</strong> With an immediate annuity, you start receiving income payments right away or within a short period after purchasing the annuity. This is suitable if you need immediate income.
@@ -91,9 +156,7 @@ const Course1 = () => {
             </h2>
             {expandedTopic === 'annuityPayoutOptions' && (
               <div className="text-gray-700">
-                <p>
-                  Annuities offer several payout options to suit different needs:
-                </p>
+                <p>Annuities offer several payout options to suit different needs:</p>
                 <ul className="list-disc pl-6 mt-2">
                   <li>
                     <strong>Lifetime Payments:</strong> You receive guaranteed income payments for as long as you live, ensuring a steady stream of income throughout your retirement years.
@@ -126,9 +189,7 @@ const Course1 = () => {
             </h2>
             {expandedTopic === 'benefitsAndDrawbacks' && (
               <div className="text-gray-700">
-                <p>
-                  Annuities offer several benefits but also come with some drawbacks:
-                </p>
+                <p>Annuities offer several benefits but also come with some drawbacks:</p>
                 <p className="mt-2 font-semibold">Benefits:</p>
                 <ul className="list-disc pl-6 mt-1">
                   <li>Guaranteed lifetime income, providing financial security in retirement</li>
@@ -149,6 +210,20 @@ const Course1 = () => {
               </div>
             )}
           </div>
+        </div>
+        <div className="flex justify-center mt-6 space-x-4">
+          <button
+            onClick={startListening}
+            className="bg-blue-500 text-white px-4 py-2 rounded-full shadow-md focus:outline-none hover:bg-blue-600 transition duration-300"
+          >
+            {buttonText}
+          </button>
+          <button
+            onClick={speakPageSummary}
+            className="bg-green-500 text-white px-4 py-2 rounded-full shadow-md focus:outline-none hover:bg-green-600 transition duration-300"
+          >
+            Explain Page
+          </button>
         </div>
       </div>
     </div>
