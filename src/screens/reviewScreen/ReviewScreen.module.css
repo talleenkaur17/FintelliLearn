@@ -4,7 +4,7 @@
 
   flex-direction: column;
   background: linear-gradient(90deg, #fff 50%, #00ffea 50%);
-  overflow: hidden;
+  overflow: auto;
 }
 
 .reviewScreen {
@@ -81,4 +81,12 @@
     padding-bottom: 2em;
     overflow: hidden;
   }
+}
+.exitBtn {
+  composes: buttonStyling;
+  background-color: #fff;
+  border: 1px solid #fff;
+  overflow: hidden;
+
+  margin-left: 50px; /* Adjust the margin as needed for spacing */
 }

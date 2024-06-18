@@ -1,3 +1,5 @@
+import React from "react";
+import { useNavigate } from "react-router-dom";
 import styles from "./ReviewScreen.module.css";
 import appStyles from "../../components/CaseStudy/CaseStudy.module.css";
 import { quizData } from "../../utils/quizData";
@@ -7,6 +9,7 @@ import cx from "classnames";
 
 export const ReviewScreen = ({ setIsRetake }) => {
   const { questions } = quizData;
+  const navigate = useNavigate(); // Use the useNavigate hook
 
   return (
     <div className={cx(appStyles.fadeInRight, styles.reviewScreenWrapper)}>
@@ -14,13 +17,13 @@ export const ReviewScreen = ({ setIsRetake }) => {
         <div className={styles.columnContainer}>
           <div className={styles.column}>
             {questions.slice(0, 2).map((data, index) => (
-              <Question index={index} data={data} />
+              <Question key={index} index={index} data={data} />
             ))}
           </div>
           <div className={styles.column}>
-            {questions.slice(2, 4).map((data, index) => {
-              return <Question index={index + 2} data={data} />;
-            })}
+            {questions.slice(2, 4).map((data, index) => (
+              <Question key={index + 2} index={index + 2} data={data} />
+            ))}
           </div>
         </div>
 
@@ -38,6 +41,12 @@ export const ReviewScreen = ({ setIsRetake }) => {
               </button>
             }
           />
+          <button
+            onClick={() => navigate("/quiz")} // Navigate to the /quiz route
+            className={styles.exitBtn} // Use the same class as the retake button
+          >
+            EXIT to QUIZ
+          </button>
         </div>
       </div>
     </div>
