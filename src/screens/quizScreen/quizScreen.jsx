@@ -16,7 +16,7 @@ export const QuizScreen = ({ setIsRetake, setIsReview }) => {
   const [result, setResult] = useState({
     score: 0,
     correctAnswers: 0,
-    wrongAnswers: 0
+    wrongAnswers: 0,
   });
 
   const { questions } = quizData;
@@ -29,7 +29,7 @@ export const QuizScreen = ({ setIsRetake, setIsReview }) => {
         ? {
             ...prev,
             score: prev.score + 1,
-            correctAnswers: prev.correctAnswers + 1
+            correctAnswers: prev.correctAnswers + 1,
           }
         : { ...prev, wrongAnswers: prev.wrongAnswers + 1 }
     );
@@ -147,7 +147,7 @@ export const QuizScreen = ({ setIsRetake, setIsReview }) => {
                       styles={buildStyles({
                         textColor: "#000",
                         pathColor: "#ffd700",
-                        trailColor: "#f6f6f6"
+                        trailColor: "#f6f6f6",
                       })}
                     />
                   );

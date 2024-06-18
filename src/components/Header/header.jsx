@@ -83,6 +83,26 @@ const Header = () => {
               </li>
               <li>
                 <Link
+                  to="/juniors"
+                  className="flex items-center py-2 px-4 rounded hover:bg-blue-700 transition-colors"
+                  onClick={handleMenuClose}
+                >
+                  <FontAwesomeIcon icon={faUsers} className="mr-3" />
+                  Junior Scholar
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/seniors"
+                  className="flex items-center py-2 px-4 rounded hover:bg-blue-700 transition-colors"
+                  onClick={handleMenuClose}
+                >
+                  <FontAwesomeIcon icon={faUsers} className="mr-3" />
+                  Financial Mastery
+                </Link>
+              </li>
+              <li>
+                <Link
                   to="/forum"
                   className="flex items-center py-2 px-4 rounded hover:bg-blue-700 transition-colors"
                   onClick={handleMenuClose}

@@ -72,33 +72,6 @@ function Dashboard() {
             </li>
             <li>
               <Link
-                to="/news"
-                className="flex items-center py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors"
-              >
-                <FontAwesomeIcon icon={faNewspaper} className="mr-3" />
-                News
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/tracker"
-                className="flex items-center py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors"
-              >
-                <FontAwesomeIcon icon={faNewspaper} className="mr-3" />
-                Budget Tracker
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/calculate"
-                className="flex items-center py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors"
-              >
-                <FontAwesomeIcon icon={faCalculator} className="mr-3" />
-                Financial Calculator
-              </Link>
-            </li>
-            <li>
-              <Link
                 to="/forum"
                 className="flex items-center py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors"
               >
@@ -113,6 +86,33 @@ function Dashboard() {
               >
                 <FontAwesomeIcon icon={faMoneyBillAlt} className="mr-3" />
                 Financial Health Assessment Bot
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/calculate"
+                className="flex items-center py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors"
+              >
+                <FontAwesomeIcon icon={faCalculator} className="mr-3" />
+                Financial Calculator
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/news"
+                className="flex items-center py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors"
+              >
+                <FontAwesomeIcon icon={faNewspaper} className="mr-3" />
+                News
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/tracker"
+                className="flex items-center py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors"
+              >
+                <FontAwesomeIcon icon={faNewspaper} className="mr-3" />
+                Budget Tracker
               </Link>
             </li>
             <li>
