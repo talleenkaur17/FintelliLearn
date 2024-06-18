@@ -34,7 +34,7 @@ function Register() {
           toast.success("Registration successful! Please log in.");
         }
         // Redirect to login page
-        navigate("/login");
+        navigate("/dashboard");
       })
       .catch((error) => {
         // Handle errors

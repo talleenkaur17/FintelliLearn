@@ -121,11 +121,19 @@ const MainBot = () => {
                           : chat.response,
                     }}
                   ></p>
-                  <button onClick={() => speakText(chat.response)}>
-                    🔊 Listen
+                  <button
+                    className="bg-blue-900 p-2 rounded-md hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-700 focus:ring-opacity-50 flex items-center space-x-2"
+                    onClick={() => speakText(chat.response)}
+                  >
+                    🔊
                   </button>
                   {isSpeaking && (
-                    <button onClick={handleStopSpeaking}>⏹ Stop</button>
+                    <button
+                      className="bg-blue-900 p-2 rounded-md hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-700 focus:ring-opacity-50 flex items-center space-x-2"
+                      onClick={handleStopSpeaking}
+                    >
+                      ⏹
+                    </button>
                   )}
                 </div>
               </div>
