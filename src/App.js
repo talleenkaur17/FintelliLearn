@@ -42,6 +42,7 @@ import Booking from "./components/Finpro/Booking.jsx";
 import Retire from "./components/Retireease/Retire.jsx";
 import Course1 from "./components/Retireease/Course1.jsx";
 import Course2 from "./components/Retireease/Course2.jsx";
+import OpeningSaving from "./components/OpeningSaving/OpeningSaving";
 
 function App() {
   return (
@@ -71,11 +72,11 @@ function App() {
             path="/course1"
             element={<ProtectedRoute element={Course1} />}
           />
-             <Route
+          <Route
             path="/course2"
             element={<ProtectedRoute element={Course2} />}
           />
-          
+
           <Route
             path="/budgeting"
             element={<ProtectedRoute element={Budget} />}
@@ -125,6 +126,10 @@ function App() {
             element={<ProtectedRoute element={InflationCalculator} />}
           />
           <Route
+            path="/open-saving"
+            element={<ProtectedRoute element={OpeningSaving} />}
+          />
+          <Route
             path="/master-saving"
             element={<ProtectedRoute element={Master} />}
           />
@@ -134,7 +139,7 @@ function App() {
             path="/Finpro"
             element={<ProtectedRoute element={Finpro} />} // Add the Finpro route here
           />
-           <Route
+          <Route
             path="/retirement"
             element={<ProtectedRoute element={Retire} />} // Add the Finpro route here
           />

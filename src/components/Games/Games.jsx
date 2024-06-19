@@ -27,7 +27,7 @@ const Games = () => {
         <GameSection
           image="https://wp-asset.groww.in/wp-content/uploads/2022/03/15104849/blog-05-3.png"
           title="Financial Fortune"
-          description="Financial Fortune challenges your cognitive abilities by testing how quickly you can identify the color of a word, rather than the word itself."
+          description="Financial Fortune challenges your cognitive abilities by testing how quickly you can identify currencies of different countries."
           link="/play-stroop"
         />
       </div>
