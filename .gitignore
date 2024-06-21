@@ -24,3 +24,5 @@ yarn-error.log*
  
 # Ignore constants.js file
 constants.js
+news.jsx
+gemini.js
