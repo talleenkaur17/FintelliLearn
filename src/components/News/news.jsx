@@ -17,7 +17,7 @@ const News = () => {
     setError(null);
     try {
       const response = await fetch(
-        `https://newsapi.org/v2/everything?q=${searchTerm}&sortBy=publishedAt&apiKey=8352e916a0fb46c3a0bd18268a761c31`
+        `https://newsapi.org/v2/everything?q=${searchTerm}&sortBy=publishedAt&apiKey=${process.env.REACT_APP_API_KEY}`
       );
       if (!response.ok) {
         throw new Error(`Error fetching news: ${response.statusText}`);
