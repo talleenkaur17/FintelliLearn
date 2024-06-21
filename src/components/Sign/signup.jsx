@@ -31,7 +31,7 @@ function Register() {
             email: user.email,
             username: uname,
           });
-          toast.success("Registration successful! Please log in.");
+          toast.success("Registration successful!");
         }
         // Redirect to login page
         navigate("/dashboard");
