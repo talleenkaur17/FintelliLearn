@@ -128,10 +128,25 @@ const Compound = () => {
                 <span className="font-bold">{result}</span>
               </p>
               <div className="flex justify-center">
-                <BarChart width={400} height={300} data={chartData}>
+                <BarChart width={500} height={300} data={chartData}>
                   <CartesianGrid strokeDasharray="3 3" />
-                  <XAxis dataKey="year" />
-                  <YAxis />
+                  <XAxis
+                    dataKey="year"
+                    label={{
+                      value: "Time Period",
+                      position: "insideBottom",
+                      offset: -10,
+                      dy: 25, // Adjusts vertical alignment
+                    }}
+                  />
+                  <YAxis
+                    label={{
+                      value: "Balance",
+                      angle: -90,
+                      position: "insideLeft",
+                      dy: 15, // Adjusts horizontal alignment
+                    }}
+                  />
                   <Tooltip />
                   <Legend />
                   <Bar dataKey="value" fill="#8884d8" />

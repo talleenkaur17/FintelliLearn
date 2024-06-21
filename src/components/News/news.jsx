@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-// import { API_KEY } from "../constants";
+import { API_KEY } from "../constants";
 import Header from "../Header/header";
 
 const News = () => {
@@ -17,7 +17,7 @@ const News = () => {
     setError(null);
     try {
       const response = await fetch(
-        `https://newsapi.org/v2/everything?q=${searchTerm}&sortBy=publishedAt&apiKey=${process.env.REACT_APP_API_KEY}`
+        `https://newsapi.org/v2/everything?q=${searchTerm}&sortBy=publishedAt&${API_KEY}=${process.env.REACT_APP_API_KEY}`
       );
       if (!response.ok) {
         throw new Error(`Error fetching news: ${response.statusText}`);

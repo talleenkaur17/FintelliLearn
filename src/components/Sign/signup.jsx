@@ -33,8 +33,8 @@ function Register() {
           });
           toast.success("Registration successful!");
         }
-        // Redirect to login page
-        navigate("/dashboard");
+
+        navigate("/login");
       })
       .catch((error) => {
         // Handle errors
